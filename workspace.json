@@ -1,289 +1,243 @@
 {
   "configuration" : { },
-  "description" : "Description",
+  "description" : "I'll Have the BLT: decomposition by business capability",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedAgent" : "structurizr-ui",
-  "lastModifiedDate" : "2026-09-27T12:47:11Z",
   "model" : {
     "people" : [ {
-      "description" : "A user of the system",
+      "description" : "Выбирает магазин, оформляет, оплачивает и получает заказ",
       "id" : "1",
-      "name" : "User",
+      "name" : "Покупатель",
       "properties" : {
-        "structurizr.dsl.identifier" : "user"
+        "structurizr.dsl.identifier" : "customer"
       },
       "relationships" : [ {
-        "description" : "Uses",
-        "destinationId" : "6",
-        "id" : "47",
+        "description" : "Оформляет и получает заказ",
+        "destinationId" : "9",
+        "id" : "57",
         "sourceId" : "1",
         "tags" : "Relationship"
       }, {
-        "description" : "Uses",
-        "destinationId" : "7",
-        "id" : "52",
+        "description" : "Выбирает, заказывает и отслеживает",
+        "destinationId" : "10",
+        "id" : "66",
         "sourceId" : "1",
-        "tags" : "Relationship"
+        "tags" : "Relationship",
+        "technology" : "HTTPS"
       } ],
       "tags" : "Element,Person"
     }, {
-      "description" : "A user of the system",
+      "description" : "Управляет своими магазинами и локальными акциями",
       "id" : "2",
-      "name" : "Courier",
-      "properties" : {
-        "structurizr.dsl.identifier" : "courier"
-      },
-      "relationships" : [ {
-        "description" : "Uses",
-        "destinationId" : "6",
-        "id" : "48",
-        "sourceId" : "2",
-        "tags" : "Relationship"
-      }, {
-        "description" : "Uses",
-        "destinationId" : "7",
-        "id" : "53",
-        "sourceId" : "2",
-        "tags" : "Relationship"
-      } ],
-      "tags" : "Element,Person"
-    }, {
-      "description" : "A user of the system",
-      "id" : "3",
-      "name" : "Director",
-      "properties" : {
-        "structurizr.dsl.identifier" : "director"
-      },
-      "relationships" : [ {
-        "description" : "Uses",
-        "destinationId" : "6",
-        "id" : "49",
-        "sourceId" : "3",
-        "tags" : "Relationship"
-      }, {
-        "description" : "Uses",
-        "destinationId" : "7",
-        "id" : "54",
-        "sourceId" : "3",
-        "tags" : "Relationship"
-      } ],
-      "tags" : "Element,Person"
-    }, {
-      "description" : "A user of the system",
-      "id" : "4",
-      "name" : "Manager",
+      "name" : "Управляющий",
       "properties" : {
         "structurizr.dsl.identifier" : "manager"
       },
       "relationships" : [ {
-        "description" : "Uses",
-        "destinationId" : "6",
-        "id" : "50",
-        "sourceId" : "4",
+        "description" : "Управляет своими магазинами",
+        "destinationId" : "9",
+        "id" : "58",
+        "sourceId" : "2",
         "tags" : "Relationship"
       }, {
-        "description" : "Uses",
-        "destinationId" : "7",
-        "id" : "55",
-        "sourceId" : "4",
-        "tags" : "Relationship"
+        "description" : "Настраивает магазин и локальные акции",
+        "destinationId" : "10",
+        "id" : "67",
+        "sourceId" : "2",
+        "tags" : "Relationship",
+        "technology" : "HTTPS"
       } ],
       "tags" : "Element,Person"
     }, {
-      "description" : "A store employee",
-      "id" : "5",
-      "name" : "Employee",
+      "description" : "Управляет каталогом, франшизами, доступом и национальными акциями",
+      "id" : "3",
+      "name" : "Администратор сети",
+      "properties" : {
+        "structurizr.dsl.identifier" : "networkAdmin"
+      },
+      "relationships" : [ {
+        "description" : "Управляет сетью",
+        "destinationId" : "9",
+        "id" : "59",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Управляет каталогом, сетью и ролями",
+        "destinationId" : "10",
+        "id" : "68",
+        "sourceId" : "3",
+        "tags" : "Relationship",
+        "technology" : "HTTPS"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Готовит и выдаёт заказы, учитывает наличные",
+      "id" : "4",
+      "name" : "Сотрудник магазина",
       "properties" : {
         "structurizr.dsl.identifier" : "employee"
       },
       "relationships" : [ {
-        "description" : "Uses",
-        "destinationId" : "6",
-        "id" : "51",
+        "description" : "Готовит и выдаёт заказы",
+        "destinationId" : "9",
+        "id" : "60",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Управляет приготовлением и выдачей",
+        "destinationId" : "10",
+        "id" : "69",
+        "sourceId" : "4",
+        "tags" : "Relationship",
+        "technology" : "HTTPS"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Доставляет назначенные заказы, учитывает оплату при получении",
+      "id" : "5",
+      "name" : "Курьер",
+      "properties" : {
+        "structurizr.dsl.identifier" : "courier"
+      },
+      "relationships" : [ {
+        "description" : "Выполняет доставку",
+        "destinationId" : "9",
+        "id" : "61",
         "sourceId" : "5",
         "tags" : "Relationship"
       }, {
-        "description" : "Uses",
-        "destinationId" : "7",
-        "id" : "56",
+        "description" : "Получает и выполняет назначения",
+        "destinationId" : "10",
+        "id" : "70",
         "sourceId" : "5",
-        "tags" : "Relationship"
+        "tags" : "Relationship",
+        "technology" : "HTTPS"
       } ],
       "tags" : "Element,Person"
     } ],
     "softwareSystems" : [ {
+      "description" : "Внешняя система онлайн-оплаты и возвратов",
+      "documentation" : { },
+      "id" : "6",
+      "name" : "Payment Provider",
+      "properties" : {
+        "structurizr.dsl.identifier" : "paymentProvider"
+      },
+      "relationships" : [ {
+        "description" : "Подтверждения платежей и возвратов",
+        "destinationId" : "9",
+        "id" : "63",
+        "sourceId" : "6",
+        "tags" : "Relationship",
+        "technology" : "HTTPS callbacks"
+      }, {
+        "description" : "Подписанные callbacks платежей и возвратов",
+        "destinationId" : "15",
+        "id" : "72",
+        "sourceId" : "6",
+        "tags" : "Relationship",
+        "technology" : "HTTPS / JSON"
+      } ],
+      "tags" : "Element,Software System,External"
+    }, {
+      "description" : "Внешняя система маршрутов и дорожной ситуации",
+      "documentation" : { },
+      "id" : "7",
+      "name" : "Mapping Provider A",
+      "properties" : {
+        "structurizr.dsl.identifier" : "mappingProviderA"
+      },
+      "tags" : "Element,Software System,External"
+    }, {
+      "description" : "Альтернативная внешняя система маршрутов и пробок",
+      "documentation" : { },
+      "id" : "8",
+      "name" : "Mapping Provider B",
+      "properties" : {
+        "structurizr.dsl.identifier" : "mappingProviderB"
+      },
+      "tags" : "Element,Software System,External"
+    }, {
       "containers" : [ {
-        "description" : "Delivers the customer and staff UI",
+        "description" : "Адаптивный UI и BFF для всех ролей; защищённая сессия",
         "documentation" : { },
-        "id" : "7",
+        "id" : "10",
         "name" : "Web Application",
         "properties" : {
           "structurizr.dsl.identifier" : "webApplication"
         },
         "relationships" : [ {
-          "description" : "Registers users and signs users in",
-          "destinationId" : "8",
-          "id" : "21",
-          "sourceId" : "7",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Shows stores, schedules and promotions",
-          "destinationId" : "14",
-          "id" : "22",
-          "sourceId" : "7",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Shows menu, prices and availability",
-          "destinationId" : "12",
-          "id" : "23",
-          "sourceId" : "7",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Manages carts, orders and statuses",
-          "destinationId" : "10",
+          "description" : "Регистрация, вход, роли, JWKS",
+          "destinationId" : "11",
           "id" : "24",
-          "sourceId" : "7",
-          "tags" : "Relationship"
+          "sourceId" : "10",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / OIDC, JSON"
         }, {
-          "description" : "Starts and confirms payments",
-          "destinationId" : "9",
+          "description" : "Меню и управление ассортиментом",
+          "destinationId" : "12",
           "id" : "25",
-          "sourceId" : "7",
-          "tags" : "Relationship"
+          "sourceId" : "10",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
         }, {
-          "description" : "Shows delivery options and delivery status",
+          "description" : "Магазины, настройки и акции",
           "destinationId" : "13",
           "id" : "26",
-          "sourceId" : "7",
-          "tags" : "Relationship"
+          "sourceId" : "10",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
         }, {
-          "description" : "Shows pickup and delivery routes",
-          "destinationId" : "11",
+          "description" : "Корзина, оформление и работа кухни",
+          "destinationId" : "14",
           "id" : "27",
-          "sourceId" : "7",
-          "tags" : "Relationship"
+          "sourceId" : "10",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
+        }, {
+          "description" : "Статус платежа, учёт наличных и их возврата в магазине",
+          "destinationId" : "15",
+          "id" : "28",
+          "sourceId" : "10",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
+        }, {
+          "description" : "Курьер, доставка, маршрут и наличные при вручении",
+          "destinationId" : "16",
+          "id" : "29",
+          "sourceId" : "10",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
+        }, {
+          "description" : "Маршрут покупателя до магазина",
+          "destinationId" : "17",
+          "id" : "30",
+          "sourceId" : "10",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
         } ],
         "tags" : "Element,Container",
-        "technology" : "Technology"
+        "technology" : "Server-side Web, HTML/CSS/JavaScript"
       }, {
-        "description" : "Registration and authentication",
+        "description" : "Учётные записи, вход, роли и доступ к магазинам",
         "documentation" : { },
-        "id" : "8",
+        "id" : "11",
         "name" : "Identity Service",
         "properties" : {
           "structurizr.dsl.identifier" : "identityService"
         },
         "relationships" : [ {
-          "description" : "Reads from and writes to",
-          "destinationId" : "15",
-          "id" : "28",
-          "sourceId" : "8",
-          "tags" : "Relationship"
-        } ],
-        "tags" : "Element,Container",
-        "technology" : "Technology"
-      }, {
-        "description" : "Payment management",
-        "documentation" : { },
-        "id" : "9",
-        "name" : "Billing Service",
-        "properties" : {
-          "structurizr.dsl.identifier" : "billingService"
-        },
-        "relationships" : [ {
-          "description" : "Reads from and writes to",
-          "destinationId" : "17",
-          "id" : "30",
-          "sourceId" : "9",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Gets product prices",
-          "destinationId" : "12",
-          "id" : "39",
-          "sourceId" : "9",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Gets promotion rules",
-          "destinationId" : "14",
-          "id" : "40",
-          "sourceId" : "9",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Notifies about payment status",
-          "destinationId" : "10",
-          "id" : "41",
-          "sourceId" : "9",
-          "tags" : "Relationship"
-        } ],
-        "tags" : "Element,Container",
-        "technology" : "Technology"
-      }, {
-        "description" : "Order state",
-        "documentation" : { },
-        "id" : "10",
-        "name" : "Order Service",
-        "properties" : {
-          "structurizr.dsl.identifier" : "orderService"
-        },
-        "relationships" : [ {
-          "description" : "Reads from and writes to",
-          "destinationId" : "16",
-          "id" : "29",
-          "sourceId" : "10",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Validates customer, staff and courier accounts",
-          "destinationId" : "8",
-          "id" : "34",
-          "sourceId" : "10",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Checks items, prices and availability",
-          "destinationId" : "12",
-          "id" : "35",
-          "sourceId" : "10",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Gets store info, promotions and preparation rules",
-          "destinationId" : "14",
-          "id" : "36",
-          "sourceId" : "10",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Requests payment calculation and status",
-          "destinationId" : "9",
+          "description" : "Читает и записывает",
+          "destinationId" : "18",
           "id" : "37",
-          "sourceId" : "10",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Creates delivery requests",
-          "destinationId" : "13",
-          "id" : "38",
-          "sourceId" : "10",
-          "tags" : "Relationship"
-        } ],
-        "tags" : "Element,Container",
-        "technology" : "Technology"
-      }, {
-        "description" : "Route building",
-        "documentation" : { },
-        "id" : "11",
-        "name" : "Map Service",
-        "properties" : {
-          "structurizr.dsl.identifier" : "mapService"
-        },
-        "relationships" : [ {
-          "description" : "Gets store address",
-          "destinationId" : "14",
-          "id" : "45",
           "sourceId" : "11",
-          "tags" : "Relationship"
+          "tags" : "Relationship",
+          "technology" : "SQL / TLS"
         } ],
-        "tags" : "Element,Container",
-        "technology" : "Technology"
+        "tags" : "Element,Container,Service",
+        "technology" : "OIDC/OAuth 2.0, JWT"
       }, {
-        "description" : "Getting info about products and categories",
+        "description" : "Каталог, меню магазина, базовые цены, доступность и расчёт товаров",
         "documentation" : { },
         "id" : "12",
         "name" : "Product Service",
@@ -291,124 +245,281 @@
           "structurizr.dsl.identifier" : "productService"
         },
         "relationships" : [ {
-          "description" : "Uses",
-          "destinationId" : "18",
+          "description" : "Обновляет кеш публичных ключей JWT",
+          "destinationId" : "11",
           "id" : "31",
           "sourceId" : "12",
-          "tags" : "Relationship"
+          "tags" : "Relationship,Security",
+          "technology" : "HTTPS / JWKS"
         }, {
-          "description" : "Gets store-specific assortment and local promotions",
-          "destinationId" : "14",
-          "id" : "46",
+          "description" : "Читает и записывает",
+          "destinationId" : "19",
+          "id" : "38",
           "sourceId" : "12",
-          "tags" : "Relationship"
+          "tags" : "Relationship",
+          "technology" : "SQL / TLS"
+        }, {
+          "description" : "Магазин, валюта и применение акции",
+          "destinationId" : "13",
+          "id" : "47",
+          "sourceId" : "12",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
         } ],
-        "tags" : "Element,Container",
-        "technology" : "Technology"
+        "tags" : "Element,Container,Service",
+        "technology" : "Java / Spring Boot"
       }, {
-        "description" : "Delivery management",
+        "description" : "Магазины, расписания, настройки, национальные и локальные акции",
         "documentation" : { },
         "id" : "13",
-        "name" : "Delivery Service",
-        "properties" : {
-          "structurizr.dsl.identifier" : "deliveryService"
-        },
-        "relationships" : [ {
-          "description" : "Reads from and writes to",
-          "destinationId" : "19",
-          "id" : "32",
-          "sourceId" : "13",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Gets delivery order details and updates delivery status",
-          "destinationId" : "10",
-          "id" : "42",
-          "sourceId" : "13",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Gets store address and delivery conditions",
-          "destinationId" : "14",
-          "id" : "43",
-          "sourceId" : "13",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Builds courier routes",
-          "destinationId" : "11",
-          "id" : "44",
-          "sourceId" : "13",
-          "tags" : "Relationship"
-        } ],
-        "tags" : "Element,Container",
-        "technology" : "Technology"
-      }, {
-        "description" : "Store management",
-        "documentation" : { },
-        "id" : "14",
         "name" : "Franchise Service",
         "properties" : {
           "structurizr.dsl.identifier" : "franchiseService"
         },
         "relationships" : [ {
-          "description" : "Reads from and writes to",
+          "description" : "Обновляет кеш публичных ключей JWT",
+          "destinationId" : "11",
+          "id" : "32",
+          "sourceId" : "13",
+          "tags" : "Relationship,Security",
+          "technology" : "HTTPS / JWKS"
+        }, {
+          "description" : "Читает и записывает",
           "destinationId" : "20",
+          "id" : "39",
+          "sourceId" : "13",
+          "tags" : "Relationship",
+          "technology" : "SQL / TLS"
+        } ],
+        "tags" : "Element,Container,Service",
+        "technology" : "Java / Spring Boot"
+      }, {
+        "description" : "Корзина, оформление, очередь кухни, готовность и состояние заказа",
+        "documentation" : { },
+        "id" : "14",
+        "name" : "Order Service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "orderService"
+        },
+        "relationships" : [ {
+          "description" : "Обновляет кеш публичных ключей JWT",
+          "destinationId" : "11",
           "id" : "33",
           "sourceId" : "14",
-          "tags" : "Relationship"
+          "tags" : "Relationship,Security",
+          "technology" : "HTTPS / JWKS"
+        }, {
+          "description" : "Читает и записывает",
+          "destinationId" : "21",
+          "id" : "40",
+          "sourceId" : "14",
+          "tags" : "Relationship",
+          "technology" : "SQL / TLS"
+        }, {
+          "description" : "Стоимость товаров и проверка доступности",
+          "destinationId" : "12",
+          "id" : "43",
+          "sourceId" : "14",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
+        }, {
+          "description" : "Приём заказов, способы оплаты, параметры кухни",
+          "destinationId" : "13",
+          "id" : "44",
+          "sourceId" : "14",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
+        }, {
+          "description" : "Создание, сверка платежа и повтор оплаты",
+          "destinationId" : "15",
+          "id" : "45",
+          "sourceId" : "14",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
+        }, {
+          "description" : "Тариф и проверка зоны доставки",
+          "destinationId" : "16",
+          "id" : "46",
+          "sourceId" : "14",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
+        }, {
+          "description" : "OrderCancelled via RabbitMQ",
+          "destinationId" : "15",
+          "id" : "52",
+          "sourceId" : "14",
+          "tags" : "Relationship,Async",
+          "technology" : "AMQP / TLS, JSON v1"
+        }, {
+          "description" : "OrderConfirmed, OrderReady, OrderCancelled via RabbitMQ",
+          "destinationId" : "16",
+          "id" : "53",
+          "sourceId" : "14",
+          "tags" : "Relationship,Async",
+          "technology" : "AMQP / TLS, JSON v1"
         } ],
-        "tags" : "Element,Container",
-        "technology" : "Technology"
+        "tags" : "Element,Container,Service",
+        "technology" : "Java / Spring Boot"
       }, {
-        "description" : "Accounts and credentials",
+        "description" : "Онлайн-платежи, учёт наличных, попытки и полные возвраты",
         "documentation" : { },
         "id" : "15",
+        "name" : "Billing Service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "billingService"
+        },
+        "relationships" : [ {
+          "description" : "Обновляет кеш публичных ключей JWT",
+          "destinationId" : "11",
+          "id" : "34",
+          "sourceId" : "15",
+          "tags" : "Relationship,Security",
+          "technology" : "HTTPS / JWKS"
+        }, {
+          "description" : "Читает и записывает",
+          "destinationId" : "22",
+          "id" : "41",
+          "sourceId" : "15",
+          "tags" : "Relationship",
+          "technology" : "SQL / TLS"
+        }, {
+          "description" : "PaymentSucceeded, PaymentFailed, RefundStatusChanged via RabbitMQ",
+          "destinationId" : "14",
+          "id" : "54",
+          "sourceId" : "15",
+          "tags" : "Relationship,Async",
+          "technology" : "AMQP / TLS, JSON v1"
+        }, {
+          "description" : "PaymentSucceeded via RabbitMQ",
+          "destinationId" : "16",
+          "id" : "55",
+          "sourceId" : "15",
+          "tags" : "Relationship,Async",
+          "technology" : "AMQP / TLS, JSON v1"
+        }, {
+          "description" : "Создаёт платёж, сверяет, отменяет и возвращает",
+          "destinationId" : "6",
+          "id" : "71",
+          "sourceId" : "15",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / Provider API"
+        } ],
+        "tags" : "Element,Container,Service",
+        "technology" : "Java / Spring Boot"
+      }, {
+        "description" : "Зона и тариф доставки, назначение курьера, забор и вручение",
+        "documentation" : { },
+        "id" : "16",
+        "name" : "Delivery Service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "deliveryService"
+        },
+        "relationships" : [ {
+          "description" : "Обновляет кеш публичных ключей JWT",
+          "destinationId" : "11",
+          "id" : "35",
+          "sourceId" : "16",
+          "tags" : "Relationship,Security",
+          "technology" : "HTTPS / JWKS"
+        }, {
+          "description" : "Читает и записывает",
+          "destinationId" : "23",
+          "id" : "42",
+          "sourceId" : "16",
+          "tags" : "Relationship",
+          "technology" : "SQL / TLS"
+        }, {
+          "description" : "Адрес магазина, зона и тариф",
+          "destinationId" : "13",
+          "id" : "48",
+          "sourceId" : "16",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
+        }, {
+          "description" : "Маршрут курьера",
+          "destinationId" : "17",
+          "id" : "49",
+          "sourceId" : "16",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
+        }, {
+          "description" : "Фиксирует наличные от назначенного курьера",
+          "destinationId" : "15",
+          "id" : "50",
+          "sourceId" : "16",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
+        }, {
+          "description" : "DeliveryAssigned, DeliveryAssignmentFailed, DeliveryPickedUp, DeliveryDelivered, DeliveryFailed, DeliveryCancelled via RabbitMQ",
+          "destinationId" : "14",
+          "id" : "56",
+          "sourceId" : "16",
+          "tags" : "Relationship,Async",
+          "technology" : "AMQP / TLS, JSON v1"
+        } ],
+        "tags" : "Element,Container,Service",
+        "technology" : "Java / Spring Boot"
+      }, {
+        "description" : "Маршруты с пробками; выбор и переключение внешних провайдеров",
+        "documentation" : { },
+        "id" : "17",
+        "name" : "Map Service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "mapService"
+        },
+        "relationships" : [ {
+          "description" : "Обновляет кеш публичных ключей JWT",
+          "destinationId" : "11",
+          "id" : "36",
+          "sourceId" : "17",
+          "tags" : "Relationship,Security",
+          "technology" : "HTTPS / JWKS"
+        }, {
+          "description" : "Координаты магазина для самовывоза",
+          "destinationId" : "13",
+          "id" : "51",
+          "sourceId" : "17",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / JSON"
+        }, {
+          "description" : "Запрашивает маршрут и дорожную ситуацию",
+          "destinationId" : "7",
+          "id" : "73",
+          "sourceId" : "17",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / Provider API"
+        }, {
+          "description" : "Запрашивает маршрут при выборе региона / отказе A",
+          "destinationId" : "8",
+          "id" : "74",
+          "sourceId" : "17",
+          "tags" : "Relationship",
+          "technology" : "HTTPS / Provider API"
+        } ],
+        "tags" : "Element,Container,Service",
+        "technology" : "Java / Spring Boot"
+      }, {
+        "description" : "Аккаунты, сессии, роли и назначения магазинов",
+        "documentation" : { },
+        "id" : "18",
         "name" : "Identity Database",
         "properties" : {
           "structurizr.dsl.identifier" : "identityDatabase"
         },
         "tags" : "Element,Container,Database",
-        "technology" : "Technology"
+        "technology" : "PostgreSQL"
       }, {
-        "description" : "order state",
+        "description" : "Каталог, меню, цены, доступность, расчёты",
         "documentation" : { },
-        "id" : "16",
-        "name" : "Order Database",
-        "properties" : {
-          "structurizr.dsl.identifier" : "orderDatabase"
-        },
-        "tags" : "Element,Container,Database",
-        "technology" : "Technology"
-      }, {
-        "description" : "payment state and price",
-        "documentation" : { },
-        "id" : "17",
-        "name" : "Billing Database",
-        "properties" : {
-          "structurizr.dsl.identifier" : "billingDatabase"
-        },
-        "tags" : "Element,Container,Database",
-        "technology" : "Technology"
-      }, {
-        "description" : "kinds of product",
-        "documentation" : { },
-        "id" : "18",
+        "id" : "19",
         "name" : "Product Database",
         "properties" : {
           "structurizr.dsl.identifier" : "productDatabase"
         },
         "tags" : "Element,Container,Database",
-        "technology" : "Technology"
+        "technology" : "PostgreSQL"
       }, {
-        "description" : "delivery state",
-        "documentation" : { },
-        "id" : "19",
-        "name" : "Delivery Database",
-        "properties" : {
-          "structurizr.dsl.identifier" : "deliveryDatabase"
-        },
-        "tags" : "Element,Container,Database",
-        "technology" : "Technology"
-      }, {
-        "description" : "special offers, plans, store common info",
+        "description" : "Магазины, владельцы, настройки, акции",
         "documentation" : { },
         "id" : "20",
         "name" : "Franchise Database",
@@ -416,39 +527,90 @@
           "structurizr.dsl.identifier" : "franchiseDatabase"
         },
         "tags" : "Element,Container,Database",
-        "technology" : "Technology"
+        "technology" : "PostgreSQL"
+      }, {
+        "description" : "Корзины, предложения, заказы, снимки, очередь кухни, outbox/inbox",
+        "documentation" : { },
+        "id" : "21",
+        "name" : "Order Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "orderDatabase"
+        },
+        "tags" : "Element,Container,Database",
+        "technology" : "PostgreSQL"
+      }, {
+        "description" : "Платежи, попытки, наличные, возвраты, outbox/inbox",
+        "documentation" : { },
+        "id" : "22",
+        "name" : "Billing Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "billingDatabase"
+        },
+        "tags" : "Element,Container,Database",
+        "technology" : "PostgreSQL"
+      }, {
+        "description" : "Доставки, курьеры, назначения, расчёты, outbox/inbox",
+        "documentation" : { },
+        "id" : "23",
+        "name" : "Delivery Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "deliveryDatabase"
+        },
+        "tags" : "Element,Container,Database",
+        "technology" : "PostgreSQL"
       } ],
-      "description" : "Online sandwich store",
+      "description" : "Онлайн-заказы сети сэндвичных с независимыми франшизами",
       "documentation" : { },
-      "id" : "6",
-      "name" : "sandwich-store",
+      "id" : "9",
+      "name" : "Sandwich Store",
       "properties" : {
-        "structurizr.dsl.identifier" : "softwareSystem"
+        "structurizr.dsl.identifier" : "sandwichStore"
       },
+      "relationships" : [ {
+        "description" : "Онлайн-платежи и возвраты",
+        "destinationId" : "6",
+        "id" : "62",
+        "sourceId" : "9",
+        "tags" : "Relationship",
+        "technology" : "HTTPS"
+      }, {
+        "description" : "Маршруты с пробками",
+        "destinationId" : "7",
+        "id" : "64",
+        "sourceId" : "9",
+        "tags" : "Relationship",
+        "technology" : "HTTPS"
+      }, {
+        "description" : "Маршруты с пробками / резерв",
+        "destinationId" : "8",
+        "id" : "65",
+        "sourceId" : "9",
+        "tags" : "Relationship",
+        "technology" : "HTTPS"
+      } ],
       "tags" : "Element,Software System"
     } ]
   },
   "name" : "sandwich-store",
   "properties" : {
-    "structurizr.inspection.info" : "0",
-    "structurizr.inspection.ignore" : "0",
-    "structurizr.inspection.error" : "39",
-    "structurizr.inspection.warning" : "0",
-    "structurizr.dsl" : "CndvcmtzcGFjZSAic2FuZHdpY2gtc3RvcmUiICB7CiAgICAKICAgIG1vZGVsIHsKICAgICAgICB1c2VyID0gcGVyc29uICJVc2VyIiAiQSB1c2VyIG9mIHRoZSBzeXN0ZW0iCiAgICAgICAgY291cmllciA9IHBlcnNvbiAiQ291cmllciIgIkEgdXNlciBvZiB0aGUgc3lzdGVtIgogICAgICAgIGRpcmVjdG9yID0gcGVyc29uICJEaXJlY3RvciIgIkEgdXNlciBvZiB0aGUgc3lzdGVtIgogICAgICAgIG1hbmFnZXIgPSBwZXJzb24gIk1hbmFnZXIiICJBIHVzZXIgb2YgdGhlIHN5c3RlbSIKICAgICAgICBlbXBsb3llZSA9IHBlcnNvbiAiRW1wbG95ZWUiICJBIHN0b3JlIGVtcGxveWVlIgoKICAgICAgICBzb2Z0d2FyZVN5c3RlbSA9IHNvZnR3YXJlU3lzdGVtICJzYW5kd2ljaC1zdG9yZSIgIk9ubGluZSBzYW5kd2ljaCBzdG9yZSIgewogICAgICAgICAgICB3ZWJBcHBsaWNhdGlvbiA9IGNvbnRhaW5lciAiV2ViIEFwcGxpY2F0aW9uIiAiRGVsaXZlcnMgdGhlIGN1c3RvbWVyIGFuZCBzdGFmZiBVSSIgIlRlY2hub2xvZ3kiCiAgICAgICAgICAgIGlkZW50aXR5U2VydmljZSA9IGNvbnRhaW5lciAiSWRlbnRpdHkgU2VydmljZSIgIlJlZ2lzdHJhdGlvbiBhbmQgYXV0aGVudGljYXRpb24iICJUZWNobm9sb2d5IgogICAgICAgICAgICBiaWxsaW5nU2VydmljZSA9IGNvbnRhaW5lciAiQmlsbGluZyBTZXJ2aWNlIiAiUGF5bWVudCBtYW5hZ2VtZW50IiAiVGVjaG5vbG9neSIKICAgICAgICAgICAgb3JkZXJTZXJ2aWNlID0gY29udGFpbmVyICJPcmRlciBTZXJ2aWNlIiAiT3JkZXIgc3RhdGUiICJUZWNobm9sb2d5IgogICAgICAgICAgICBtYXBTZXJ2aWNlID0gY29udGFpbmVyICJNYXAgU2VydmljZSIgIlJvdXRlIGJ1aWxkaW5nIiAiVGVjaG5vbG9neSIKICAgICAgICAgICAgcHJvZHVjdFNlcnZpY2UgPSBjb250YWluZXIgIlByb2R1Y3QgU2VydmljZSIgIkdldHRpbmcgaW5mbyBhYm91dCBwcm9kdWN0cyBhbmQgY2F0ZWdvcmllcyIgIlRlY2hub2xvZ3kiCiAgICAgICAgICAgIGRlbGl2ZXJ5U2VydmljZSA9IGNvbnRhaW5lciAiRGVsaXZlcnkgU2VydmljZSIgIkRlbGl2ZXJ5IG1hbmFnZW1lbnQiICJUZWNobm9sb2d5IgogICAgICAgICAgICBmcmFuY2hpc2VTZXJ2aWNlID0gY29udGFpbmVyICJGcmFuY2hpc2UgU2VydmljZSIgIlN0b3JlIG1hbmFnZW1lbnQiICJUZWNobm9sb2d5IgoKICAgICAgICAgICAgaWRlbnRpdHlEYXRhYmFzZSA9IGNvbnRhaW5lciAiSWRlbnRpdHkgRGF0YWJhc2UiICJBY2NvdW50cyBhbmQgY3JlZGVudGlhbHMiICJUZWNobm9sb2d5IiAiRGF0YWJhc2UiCiAgICAgICAgICAgIG9yZGVyRGF0YWJhc2UgPSBjb250YWluZXIgIk9yZGVyIERhdGFiYXNlIiAib3JkZXIgc3RhdGUiICJUZWNobm9sb2d5IiAiRGF0YWJhc2UiCiAgICAgICAgICAgIGJpbGxpbmdEYXRhYmFzZSA9IGNvbnRhaW5lciAiQmlsbGluZyBEYXRhYmFzZSIgInBheW1lbnQgc3RhdGUgYW5kIHByaWNlIiAiVGVjaG5vbG9neSIgIkRhdGFiYXNlIgogICAgICAgICAgICBwcm9kdWN0RGF0YWJhc2UgPSBjb250YWluZXIgIlByb2R1Y3QgRGF0YWJhc2UiICJraW5kcyBvZiBwcm9kdWN0IiAiVGVjaG5vbG9neSIgIkRhdGFiYXNlIgogICAgICAgICAgICBkZWxpdmVyeURhdGFiYXNlID0gY29udGFpbmVyICJEZWxpdmVyeSBEYXRhYmFzZSIgImRlbGl2ZXJ5IHN0YXRlIiAiVGVjaG5vbG9neSIgIkRhdGFiYXNlIgogICAgICAgICAgICBmcmFuY2hpc2VEYXRhYmFzZSA9IGNvbnRhaW5lciAiRnJhbmNoaXNlIERhdGFiYXNlIiAic3BlY2lhbCBvZmZlcnMsIHBsYW5zLCBzdG9yZSBjb21tb24gaW5mbyIgIlRlY2hub2xvZ3kiICJEYXRhYmFzZSIKCiAgICAgICAgICAgIHdlYkFwcGxpY2F0aW9uIC0+IGlkZW50aXR5U2VydmljZSAiUmVnaXN0ZXJzIHVzZXJzIGFuZCBzaWducyB1c2VycyBpbiIKICAgICAgICAgICAgd2ViQXBwbGljYXRpb24gLT4gZnJhbmNoaXNlU2VydmljZSAiU2hvd3Mgc3RvcmVzLCBzY2hlZHVsZXMgYW5kIHByb21vdGlvbnMiCiAgICAgICAgICAgIHdlYkFwcGxpY2F0aW9uIC0+IHByb2R1Y3RTZXJ2aWNlICJTaG93cyBtZW51LCBwcmljZXMgYW5kIGF2YWlsYWJpbGl0eSIKICAgICAgICAgICAgd2ViQXBwbGljYXRpb24gLT4gb3JkZXJTZXJ2aWNlICJNYW5hZ2VzIGNhcnRzLCBvcmRlcnMgYW5kIHN0YXR1c2VzIgogICAgICAgICAgICB3ZWJBcHBsaWNhdGlvbiAtPiBiaWxsaW5nU2VydmljZSAiU3RhcnRzIGFuZCBjb25maXJtcyBwYXltZW50cyIKICAgICAgICAgICAgd2ViQXBwbGljYXRpb24gLT4gZGVsaXZlcnlTZXJ2aWNlICJTaG93cyBkZWxpdmVyeSBvcHRpb25zIGFuZCBkZWxpdmVyeSBzdGF0dXMiCiAgICAgICAgICAgIHdlYkFwcGxpY2F0aW9uIC0+IG1hcFNlcnZpY2UgIlNob3dzIHBpY2t1cCBhbmQgZGVsaXZlcnkgcm91dGVzIgoKICAgICAgICAgICAgaWRlbnRpdHlTZXJ2aWNlIC0+IGlkZW50aXR5RGF0YWJhc2UgIlJlYWRzIGZyb20gYW5kIHdyaXRlcyB0byIKICAgICAgICAgICAgb3JkZXJTZXJ2aWNlIC0+IG9yZGVyRGF0YWJhc2UgIlJlYWRzIGZyb20gYW5kIHdyaXRlcyB0byIKICAgICAgICAgICAgYmlsbGluZ1NlcnZpY2UgLT4gYmlsbGluZ0RhdGFiYXNlICJSZWFkcyBmcm9tIGFuZCB3cml0ZXMgdG8iCiAgICAgICAgICAgIHByb2R1Y3RTZXJ2aWNlIC0+IHByb2R1Y3REYXRhYmFzZSAiVXNlcyIKICAgICAgICAgICAgZGVsaXZlcnlTZXJ2aWNlIC0+IGRlbGl2ZXJ5RGF0YWJhc2UgIlJlYWRzIGZyb20gYW5kIHdyaXRlcyB0byIKICAgICAgICAgICAgZnJhbmNoaXNlU2VydmljZSAtPiBmcmFuY2hpc2VEYXRhYmFzZSAiUmVhZHMgZnJvbSBhbmQgd3JpdGVzIHRvIgoKICAgICAgICAgICAgb3JkZXJTZXJ2aWNlIC0+IGlkZW50aXR5U2VydmljZSAiVmFsaWRhdGVzIGN1c3RvbWVyLCBzdGFmZiBhbmQgY291cmllciBhY2NvdW50cyIKICAgICAgICAgICAgb3JkZXJTZXJ2aWNlIC0+IHByb2R1Y3RTZXJ2aWNlICJDaGVja3MgaXRlbXMsIHByaWNlcyBhbmQgYXZhaWxhYmlsaXR5IgogICAgICAgICAgICBvcmRlclNlcnZpY2UgLT4gZnJhbmNoaXNlU2VydmljZSAiR2V0cyBzdG9yZSBpbmZvLCBwcm9tb3Rpb25zIGFuZCBwcmVwYXJhdGlvbiBydWxlcyIKICAgICAgICAgICAgb3JkZXJTZXJ2aWNlIC0+IGJpbGxpbmdTZXJ2aWNlICJSZXF1ZXN0cyBwYXltZW50IGNhbGN1bGF0aW9uIGFuZCBzdGF0dXMiCiAgICAgICAgICAgIG9yZGVyU2VydmljZSAtPiBkZWxpdmVyeVNlcnZpY2UgIkNyZWF0ZXMgZGVsaXZlcnkgcmVxdWVzdHMiCgogICAgICAgICAgICBiaWxsaW5nU2VydmljZSAtPiBwcm9kdWN0U2VydmljZSAiR2V0cyBwcm9kdWN0IHByaWNlcyIKICAgICAgICAgICAgYmlsbGluZ1NlcnZpY2UgLT4gZnJhbmNoaXNlU2VydmljZSAiR2V0cyBwcm9tb3Rpb24gcnVsZXMiCiAgICAgICAgICAgIGJpbGxpbmdTZXJ2aWNlIC0+IG9yZGVyU2VydmljZSAiTm90aWZpZXMgYWJvdXQgcGF5bWVudCBzdGF0dXMiCgogICAgICAgICAgICBkZWxpdmVyeVNlcnZpY2UgLT4gb3JkZXJTZXJ2aWNlICJHZXRzIGRlbGl2ZXJ5IG9yZGVyIGRldGFpbHMgYW5kIHVwZGF0ZXMgZGVsaXZlcnkgc3RhdHVzIgogICAgICAgICAgICBkZWxpdmVyeVNlcnZpY2UgLT4gZnJhbmNoaXNlU2VydmljZSAiR2V0cyBzdG9yZSBhZGRyZXNzIGFuZCBkZWxpdmVyeSBjb25kaXRpb25zIgogICAgICAgICAgICBkZWxpdmVyeVNlcnZpY2UgLT4gbWFwU2VydmljZSAiQnVpbGRzIGNvdXJpZXIgcm91dGVzIgoKICAgICAgICAgICAgbWFwU2VydmljZSAtPiBmcmFuY2hpc2VTZXJ2aWNlICJHZXRzIHN0b3JlIGFkZHJlc3MiCiAgICAgICAgICAgIHByb2R1Y3RTZXJ2aWNlIC0+IGZyYW5jaGlzZVNlcnZpY2UgIkdldHMgc3RvcmUtc3BlY2lmaWMgYXNzb3J0bWVudCBhbmQgbG9jYWwgcHJvbW90aW9ucyIKCiAgICAgICAgfQogICAgICAgIAogICAgICAgIHVzZXIgLT4gc29mdHdhcmVTeXN0ZW0gIlVzZXMiCiAgICAgICAgY291cmllciAtPiBzb2Z0d2FyZVN5c3RlbSAiVXNlcyIKICAgICAgICBkaXJlY3RvciAtPiBzb2Z0d2FyZVN5c3RlbSAiVXNlcyIKICAgICAgICBtYW5hZ2VyIC0+IHNvZnR3YXJlU3lzdGVtICJVc2VzIgogICAgICAgIGVtcGxveWVlIC0+IHNvZnR3YXJlU3lzdGVtICJVc2VzIgoKICAgICAgICB1c2VyIC0+IHdlYkFwcGxpY2F0aW9uICJVc2VzIgogICAgICAgIGNvdXJpZXIgLT4gd2ViQXBwbGljYXRpb24gIlVzZXMiCiAgICAgICAgZGlyZWN0b3IgLT4gd2ViQXBwbGljYXRpb24gIlVzZXMiCiAgICAgICAgbWFuYWdlciAtPiB3ZWJBcHBsaWNhdGlvbiAiVXNlcyIKICAgICAgICBlbXBsb3llZSAtPiB3ZWJBcHBsaWNhdGlvbiAiVXNlcyIKICAgIH0KICAgIAogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgc29mdHdhcmVTeXN0ZW0gIlN5c3RlbUNvbnRleHQiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9MYXlvdXQKICAgICAgICB9CiAgICAgICAgCiAgICAgICAgY29udGFpbmVyIHNvZnR3YXJlU3lzdGVtICJDb250YWluZXJzIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvTGF5b3V0CiAgICAgICAgfQogICAgICAgIAogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgc2hhcGUgUGVyc29uCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMwODQyN0IKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJTb2Z0d2FyZSBTeXN0ZW0iIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzExNjhCRAogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkNvbnRhaW5lciIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjNDM4REQ1CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiRGF0YWJhc2UiIHsKICAgICAgICAgICAgICAgIHNoYXBlIEN5bGluZGVyCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cn0="
+    "structurizr.dsl" : "d29ya3NwYWNlICJzYW5kd2ljaC1zdG9yZSIgIkknbGwgSGF2ZSB0aGUgQkxUOiBkZWNvbXBvc2l0aW9uIGJ5IGJ1c2luZXNzIGNhcGFiaWxpdHkiIHsKICAgICFpbXBsaWVkUmVsYXRpb25zaGlwcyBmYWxzZQoKICAgIG1vZGVsIHsKICAgICAgICBjdXN0b21lciA9IHBlcnNvbiAi0J/QvtC60YPQv9Cw0YLQtdC70YwiICLQktGL0LHQuNGA0LDQtdGCINC80LDQs9Cw0LfQuNC9LCDQvtGE0L7RgNC80LvRj9C10YIsINC+0L/Qu9Cw0YfQuNCy0LDQtdGCINC4INC/0L7Qu9GD0YfQsNC10YIg0LfQsNC60LDQtyIKICAgICAgICBtYW5hZ2VyID0gcGVyc29uICLQo9C/0YDQsNCy0LvRj9GO0YnQuNC5IiAi0KPQv9GA0LDQstC70Y/QtdGCINGB0LLQvtC40LzQuCDQvNCw0LPQsNC30LjQvdCw0LzQuCDQuCDQu9C+0LrQsNC70YzQvdGL0LzQuCDQsNC60YbQuNGP0LzQuCIKICAgICAgICBuZXR3b3JrQWRtaW4gPSBwZXJzb24gItCQ0LTQvNC40L3QuNGB0YLRgNCw0YLQvtGAINGB0LXRgtC4IiAi0KPQv9GA0LDQstC70Y/QtdGCINC60LDRgtCw0LvQvtCz0L7QvCwg0YTRgNCw0L3RiNC40LfQsNC80LgsINC00L7RgdGC0YPQv9C+0Lwg0Lgg0L3QsNGG0LjQvtC90LDQu9GM0L3Ri9C80Lgg0LDQutGG0LjRj9C80LgiCiAgICAgICAgZW1wbG95ZWUgPSBwZXJzb24gItCh0L7RgtGA0YPQtNC90LjQuiDQvNCw0LPQsNC30LjQvdCwIiAi0JPQvtGC0L7QstC40YIg0Lgg0LLRi9C00LDRkdGCINC30LDQutCw0LfRiywg0YPRh9C40YLRi9Cy0LDQtdGCINC90LDQu9C40YfQvdGL0LUiCiAgICAgICAgY291cmllciA9IHBlcnNvbiAi0JrRg9GA0YzQtdGAIiAi0JTQvtGB0YLQsNCy0LvRj9C10YIg0L3QsNC30L3QsNGH0LXQvdC90YvQtSDQt9Cw0LrQsNC30YssINGD0YfQuNGC0YvQstCw0LXRgiDQvtC/0LvQsNGC0YMg0L/RgNC4INC/0L7Qu9GD0YfQtdC90LjQuCIKCiAgICAgICAgcGF5bWVudFByb3ZpZGVyID0gc29mdHdhcmVTeXN0ZW0gIlBheW1lbnQgUHJvdmlkZXIiICLQktC90LXRiNC90Y/RjyDRgdC40YHRgtC10LzQsCDQvtC90LvQsNC50L0t0L7Qv9C70LDRgtGLINC4INCy0L7Qt9Cy0YDQsNGC0L7QsiIgIkV4dGVybmFsIgogICAgICAgIG1hcHBpbmdQcm92aWRlckEgPSBzb2Z0d2FyZVN5c3RlbSAiTWFwcGluZyBQcm92aWRlciBBIiAi0JLQvdC10YjQvdGP0Y8g0YHQuNGB0YLQtdC80LAg0LzQsNGA0YjRgNGD0YLQvtCyINC4INC00L7RgNC+0LbQvdC+0Lkg0YHQuNGC0YPQsNGG0LjQuCIgIkV4dGVybmFsIgogICAgICAgIG1hcHBpbmdQcm92aWRlckIgPSBzb2Z0d2FyZVN5c3RlbSAiTWFwcGluZyBQcm92aWRlciBCIiAi0JDQu9GM0YLQtdGA0L3QsNGC0LjQstC90LDRjyDQstC90LXRiNC90Y/RjyDRgdC40YHRgtC10LzQsCDQvNCw0YDRiNGA0YPRgtC+0LIg0Lgg0L/RgNC+0LHQvtC6IiAiRXh0ZXJuYWwiCgogICAgICAgIHNhbmR3aWNoU3RvcmUgPSBzb2Z0d2FyZVN5c3RlbSAiU2FuZHdpY2ggU3RvcmUiICLQntC90LvQsNC50L0t0LfQsNC60LDQt9GLINGB0LXRgtC4INGB0Y3QvdC00LLQuNGH0L3Ri9GFINGBINC90LXQt9Cw0LLQuNGB0LjQvNGL0LzQuCDRhNGA0LDQvdGI0LjQt9Cw0LzQuCIgewogICAgICAgICAgICB3ZWJBcHBsaWNhdGlvbiA9IGNvbnRhaW5lciAiV2ViIEFwcGxpY2F0aW9uIiAi0JDQtNCw0L/RgtC40LLQvdGL0LkgVUkg0LggQkZGINC00LvRjyDQstGB0LXRhSDRgNC+0LvQtdC5OyDQt9Cw0YnQuNGJ0ZHQvdC90LDRjyDRgdC10YHRgdC40Y8iICJTZXJ2ZXItc2lkZSBXZWIsIEhUTUwvQ1NTL0phdmFTY3JpcHQiCiAgICAgICAgICAgIGlkZW50aXR5U2VydmljZSA9IGNvbnRhaW5lciAiSWRlbnRpdHkgU2VydmljZSIgItCj0YfRkdGC0L3Ri9C1INC30LDQv9C40YHQuCwg0LLRhdC+0LQsINGA0L7Qu9C4INC4INC00L7RgdGC0YPQvyDQuiDQvNCw0LPQsNC30LjQvdCw0LwiICJPSURDL09BdXRoIDIuMCwgSldUIiAiU2VydmljZSIKICAgICAgICAgICAgcHJvZHVjdFNlcnZpY2UgPSBjb250YWluZXIgIlByb2R1Y3QgU2VydmljZSIgItCa0LDRgtCw0LvQvtCzLCDQvNC10L3RjiDQvNCw0LPQsNC30LjQvdCwLCDQsdCw0LfQvtCy0YvQtSDRhtC10L3Riywg0LTQvtGB0YLRg9C/0L3QvtGB0YLRjCDQuCDRgNCw0YHRh9GR0YIg0YLQvtCy0LDRgNC+0LIiICJKYXZhIC8gU3ByaW5nIEJvb3QiICJTZXJ2aWNlIgogICAgICAgICAgICBmcmFuY2hpc2VTZXJ2aWNlID0gY29udGFpbmVyICJGcmFuY2hpc2UgU2VydmljZSIgItCc0LDQs9Cw0LfQuNC90YssINGA0LDRgdC/0LjRgdCw0L3QuNGPLCDQvdCw0YHRgtGA0L7QudC60LgsINC90LDRhtC40L7QvdCw0LvRjNC90YvQtSDQuCDQu9C+0LrQsNC70YzQvdGL0LUg0LDQutGG0LjQuCIgIkphdmEgLyBTcHJpbmcgQm9vdCIgIlNlcnZpY2UiCiAgICAgICAgICAgIG9yZGVyU2VydmljZSA9IGNvbnRhaW5lciAiT3JkZXIgU2VydmljZSIgItCa0L7RgNC30LjQvdCwLCDQvtGE0L7RgNC80LvQtdC90LjQtSwg0L7Rh9C10YDQtdC00Ywg0LrRg9GF0L3QuCwg0LPQvtGC0L7QstC90L7RgdGC0Ywg0Lgg0YHQvtGB0YLQvtGP0L3QuNC1INC30LDQutCw0LfQsCIgIkphdmEgLyBTcHJpbmcgQm9vdCIgIlNlcnZpY2UiCiAgICAgICAgICAgIGJpbGxpbmdTZXJ2aWNlID0gY29udGFpbmVyICJCaWxsaW5nIFNlcnZpY2UiICLQntC90LvQsNC50L0t0L/Qu9Cw0YLQtdC20LgsINGD0YfRkdGCINC90LDQu9C40YfQvdGL0YUsINC/0L7Qv9GL0YLQutC4INC4INC/0L7Qu9C90YvQtSDQstC+0LfQstGA0LDRgtGLIiAiSmF2YSAvIFNwcmluZyBCb290IiAiU2VydmljZSIKICAgICAgICAgICAgZGVsaXZlcnlTZXJ2aWNlID0gY29udGFpbmVyICJEZWxpdmVyeSBTZXJ2aWNlIiAi0JfQvtC90LAg0Lgg0YLQsNGA0LjRhCDQtNC+0YHRgtCw0LLQutC4LCDQvdCw0LfQvdCw0YfQtdC90LjQtSDQutGD0YDRjNC10YDQsCwg0LfQsNCx0L7RgCDQuCDQstGA0YPRh9C10L3QuNC1IiAiSmF2YSAvIFNwcmluZyBCb290IiAiU2VydmljZSIKICAgICAgICAgICAgbWFwU2VydmljZSA9IGNvbnRhaW5lciAiTWFwIFNlcnZpY2UiICLQnNCw0YDRiNGA0YPRgtGLINGBINC/0YDQvtCx0LrQsNC80Lg7INCy0YvQsdC+0YAg0Lgg0L/QtdGA0LXQutC70Y7Rh9C10L3QuNC1INCy0L3QtdGI0L3QuNGFINC/0YDQvtCy0LDQudC00LXRgNC+0LIiICJKYXZhIC8gU3ByaW5nIEJvb3QiICJTZXJ2aWNlIgoKICAgICAgICAgICAgaWRlbnRpdHlEYXRhYmFzZSA9IGNvbnRhaW5lciAiSWRlbnRpdHkgRGF0YWJhc2UiICLQkNC60LrQsNGD0L3RgtGLLCDRgdC10YHRgdC40LgsINGA0L7Qu9C4INC4INC90LDQt9C90LDRh9C10L3QuNGPINC80LDQs9Cw0LfQuNC90L7QsiIgIlBvc3RncmVTUUwiICJEYXRhYmFzZSIKICAgICAgICAgICAgcHJvZHVjdERhdGFiYXNlID0gY29udGFpbmVyICJQcm9kdWN0IERhdGFiYXNlIiAi0JrQsNGC0LDQu9C+0LMsINC80LXQvdGOLCDRhtC10L3Riywg0LTQvtGB0YLRg9C/0L3QvtGB0YLRjCwg0YDQsNGB0YfRkdGC0YsiICJQb3N0Z3JlU1FMIiAiRGF0YWJhc2UiCiAgICAgICAgICAgIGZyYW5jaGlzZURhdGFiYXNlID0gY29udGFpbmVyICJGcmFuY2hpc2UgRGF0YWJhc2UiICLQnNCw0LPQsNC30LjQvdGLLCDQstC70LDQtNC10LvRjNGG0YssINC90LDRgdGC0YDQvtC50LrQuCwg0LDQutGG0LjQuCIgIlBvc3RncmVTUUwiICJEYXRhYmFzZSIKICAgICAgICAgICAgb3JkZXJEYXRhYmFzZSA9IGNvbnRhaW5lciAiT3JkZXIgRGF0YWJhc2UiICLQmtC+0YDQt9C40L3Riywg0L/RgNC10LTQu9C+0LbQtdC90LjRjywg0LfQsNC60LDQt9GLLCDRgdC90LjQvNC60LgsINC+0YfQtdGA0LXQtNGMINC60YPRhdC90LgsIG91dGJveC9pbmJveCIgIlBvc3RncmVTUUwiICJEYXRhYmFzZSIKICAgICAgICAgICAgYmlsbGluZ0RhdGFiYXNlID0gY29udGFpbmVyICJCaWxsaW5nIERhdGFiYXNlIiAi0J/Qu9Cw0YLQtdC20LgsINC/0L7Qv9GL0YLQutC4LCDQvdCw0LvQuNGH0L3Ri9C1LCDQstC+0LfQstGA0LDRgtGLLCBvdXRib3gvaW5ib3giICJQb3N0Z3JlU1FMIiAiRGF0YWJhc2UiCiAgICAgICAgICAgIGRlbGl2ZXJ5RGF0YWJhc2UgPSBjb250YWluZXIgIkRlbGl2ZXJ5IERhdGFiYXNlIiAi0JTQvtGB0YLQsNCy0LrQuCwg0LrRg9GA0YzQtdGA0YssINC90LDQt9C90LDRh9C10L3QuNGPLCDRgNCw0YHRh9GR0YLRiywgb3V0Ym94L2luYm94IiAiUG9zdGdyZVNRTCIgIkRhdGFiYXNlIgoKICAgICAgICAgICAgd2ViQXBwbGljYXRpb24gLT4gaWRlbnRpdHlTZXJ2aWNlICLQoNC10LPQuNGB0YLRgNCw0YbQuNGPLCDQstGF0L7QtCwg0YDQvtC70LgsIEpXS1MiICJIVFRQUyAvIE9JREMsIEpTT04iCiAgICAgICAgICAgIHdlYkFwcGxpY2F0aW9uIC0+IHByb2R1Y3RTZXJ2aWNlICLQnNC10L3RjiDQuCDRg9C/0YDQsNCy0LvQtdC90LjQtSDQsNGB0YHQvtGA0YLQuNC80LXQvdGC0L7QvCIgIkhUVFBTIC8gSlNPTiIKICAgICAgICAgICAgd2ViQXBwbGljYXRpb24gLT4gZnJhbmNoaXNlU2VydmljZSAi0JzQsNCz0LDQt9C40L3Riywg0L3QsNGB0YLRgNC+0LnQutC4INC4INCw0LrRhtC40LgiICJIVFRQUyAvIEpTT04iCiAgICAgICAgICAgIHdlYkFwcGxpY2F0aW9uIC0+IG9yZGVyU2VydmljZSAi0JrQvtGA0LfQuNC90LAsINC+0YTQvtGA0LzQu9C10L3QuNC1INC4INGA0LDQsdC+0YLQsCDQutGD0YXQvdC4IiAiSFRUUFMgLyBKU09OIgogICAgICAgICAgICB3ZWJBcHBsaWNhdGlvbiAtPiBiaWxsaW5nU2VydmljZSAi0KHRgtCw0YLRg9GBINC/0LvQsNGC0LXQttCwLCDRg9GH0ZHRgiDQvdCw0LvQuNGH0L3Ri9GFINC4INC40YUg0LLQvtC30LLRgNCw0YLQsCDQsiDQvNCw0LPQsNC30LjQvdC1IiAiSFRUUFMgLyBKU09OIgogICAgICAgICAgICB3ZWJBcHBsaWNhdGlvbiAtPiBkZWxpdmVyeVNlcnZpY2UgItCa0YPRgNGM0LXRgCwg0LTQvtGB0YLQsNCy0LrQsCwg0LzQsNGA0YjRgNGD0YIg0Lgg0L3QsNC70LjRh9C90YvQtSDQv9GA0Lgg0LLRgNGD0YfQtdC90LjQuCIgIkhUVFBTIC8gSlNPTiIKICAgICAgICAgICAgd2ViQXBwbGljYXRpb24gLT4gbWFwU2VydmljZSAi0JzQsNGA0YjRgNGD0YIg0L/QvtC60YPQv9Cw0YLQtdC70Y8g0LTQviDQvNCw0LPQsNC30LjQvdCwIiAiSFRUUFMgLyBKU09OIgoKICAgICAgICAgICAgcHJvZHVjdFNlcnZpY2UgLT4gaWRlbnRpdHlTZXJ2aWNlICLQntCx0L3QvtCy0LvRj9C10YIg0LrQtdGIINC/0YPQsdC70LjRh9C90YvRhSDQutC70Y7Rh9C10LkgSldUIiAiSFRUUFMgLyBKV0tTIiAiU2VjdXJpdHkiCiAgICAgICAgICAgIGZyYW5jaGlzZVNlcnZpY2UgLT4gaWRlbnRpdHlTZXJ2aWNlICLQntCx0L3QvtCy0LvRj9C10YIg0LrQtdGIINC/0YPQsdC70LjRh9C90YvRhSDQutC70Y7Rh9C10LkgSldUIiAiSFRUUFMgLyBKV0tTIiAiU2VjdXJpdHkiCiAgICAgICAgICAgIG9yZGVyU2VydmljZSAtPiBpZGVudGl0eVNlcnZpY2UgItCe0LHQvdC+0LLQu9GP0LXRgiDQutC10Ygg0L/Rg9Cx0LvQuNGH0L3Ri9GFINC60LvRjtGH0LXQuSBKV1QiICJIVFRQUyAvIEpXS1MiICJTZWN1cml0eSIKICAgICAgICAgICAgYmlsbGluZ1NlcnZpY2UgLT4gaWRlbnRpdHlTZXJ2aWNlICLQntCx0L3QvtCy0LvRj9C10YIg0LrQtdGIINC/0YPQsdC70LjRh9C90YvRhSDQutC70Y7Rh9C10LkgSldUIiAiSFRUUFMgLyBKV0tTIiAiU2VjdXJpdHkiCiAgICAgICAgICAgIGRlbGl2ZXJ5U2VydmljZSAtPiBpZGVudGl0eVNlcnZpY2UgItCe0LHQvdC+0LLQu9GP0LXRgiDQutC10Ygg0L/Rg9Cx0LvQuNGH0L3Ri9GFINC60LvRjtGH0LXQuSBKV1QiICJIVFRQUyAvIEpXS1MiICJTZWN1cml0eSIKICAgICAgICAgICAgbWFwU2VydmljZSAtPiBpZGVudGl0eVNlcnZpY2UgItCe0LHQvdC+0LLQu9GP0LXRgiDQutC10Ygg0L/Rg9Cx0LvQuNGH0L3Ri9GFINC60LvRjtGH0LXQuSBKV1QiICJIVFRQUyAvIEpXS1MiICJTZWN1cml0eSIKCiAgICAgICAgICAgIGlkZW50aXR5U2VydmljZSAtPiBpZGVudGl0eURhdGFiYXNlICLQp9C40YLQsNC10YIg0Lgg0LfQsNC/0LjRgdGL0LLQsNC10YIiICJTUUwgLyBUTFMiCiAgICAgICAgICAgIHByb2R1Y3RTZXJ2aWNlIC0+IHByb2R1Y3REYXRhYmFzZSAi0KfQuNGC0LDQtdGCINC4INC30LDQv9C40YHRi9Cy0LDQtdGCIiAiU1FMIC8gVExTIgogICAgICAgICAgICBmcmFuY2hpc2VTZXJ2aWNlIC0+IGZyYW5jaGlzZURhdGFiYXNlICLQp9C40YLQsNC10YIg0Lgg0LfQsNC/0LjRgdGL0LLQsNC10YIiICJTUUwgLyBUTFMiCiAgICAgICAgICAgIG9yZGVyU2VydmljZSAtPiBvcmRlckRhdGFiYXNlICLQp9C40YLQsNC10YIg0Lgg0LfQsNC/0LjRgdGL0LLQsNC10YIiICJTUUwgLyBUTFMiCiAgICAgICAgICAgIGJpbGxpbmdTZXJ2aWNlIC0+IGJpbGxpbmdEYXRhYmFzZSAi0KfQuNGC0LDQtdGCINC4INC30LDQv9C40YHRi9Cy0LDQtdGCIiAiU1FMIC8gVExTIgogICAgICAgICAgICBkZWxpdmVyeVNlcnZpY2UgLT4gZGVsaXZlcnlEYXRhYmFzZSAi0KfQuNGC0LDQtdGCINC4INC30LDQv9C40YHRi9Cy0LDQtdGCIiAiU1FMIC8gVExTIgoKICAgICAgICAgICAgb3JkZXJTZXJ2aWNlIC0+IHByb2R1Y3RTZXJ2aWNlICLQodGC0L7QuNC80L7RgdGC0Ywg0YLQvtCy0LDRgNC+0LIg0Lgg0L/RgNC+0LLQtdGA0LrQsCDQtNC+0YHRgtGD0L/QvdC+0YHRgtC4IiAiSFRUUFMgLyBKU09OIgogICAgICAgICAgICBvcmRlclNlcnZpY2UgLT4gZnJhbmNoaXNlU2VydmljZSAi0J/RgNC40ZHQvCDQt9Cw0LrQsNC30L7Qsiwg0YHQv9C+0YHQvtCx0Ysg0L7Qv9C70LDRgtGLLCDQv9Cw0YDQsNC80LXRgtGA0Ysg0LrRg9GF0L3QuCIgIkhUVFBTIC8gSlNPTiIKICAgICAgICAgICAgb3JkZXJTZXJ2aWNlIC0+IGJpbGxpbmdTZXJ2aWNlICLQodC+0LfQtNCw0L3QuNC1LCDRgdCy0LXRgNC60LAg0L/Qu9Cw0YLQtdC20LAg0Lgg0L/QvtCy0YLQvtGAINC+0L/Qu9Cw0YLRiyIgIkhUVFBTIC8gSlNPTiIKICAgICAgICAgICAgb3JkZXJTZXJ2aWNlIC0+IGRlbGl2ZXJ5U2VydmljZSAi0KLQsNGA0LjRhCDQuCDQv9GA0L7QstC10YDQutCwINC30L7QvdGLINC00L7RgdGC0LDQstC60LgiICJIVFRQUyAvIEpTT04iCiAgICAgICAgICAgIHByb2R1Y3RTZXJ2aWNlIC0+IGZyYW5jaGlzZVNlcnZpY2UgItCc0LDQs9Cw0LfQuNC9LCDQstCw0LvRjtGC0LAg0Lgg0L/RgNC40LzQtdC90LXQvdC40LUg0LDQutGG0LjQuCIgIkhUVFBTIC8gSlNPTiIKICAgICAgICAgICAgZGVsaXZlcnlTZXJ2aWNlIC0+IGZyYW5jaGlzZVNlcnZpY2UgItCQ0LTRgNC10YEg0LzQsNCz0LDQt9C40L3QsCwg0LfQvtC90LAg0Lgg0YLQsNGA0LjRhCIgIkhUVFBTIC8gSlNPTiIKICAgICAgICAgICAgZGVsaXZlcnlTZXJ2aWNlIC0+IG1hcFNlcnZpY2UgItCc0LDRgNGI0YDRg9GCINC60YPRgNGM0LXRgNCwIiAiSFRUUFMgLyBKU09OIgogICAgICAgICAgICBkZWxpdmVyeVNlcnZpY2UgLT4gYmlsbGluZ1NlcnZpY2UgItCk0LjQutGB0LjRgNGD0LXRgiDQvdCw0LvQuNGH0L3Ri9C1INC+0YIg0L3QsNC30L3QsNGH0LXQvdC90L7Qs9C+INC60YPRgNGM0LXRgNCwIiAiSFRUUFMgLyBKU09OIgogICAgICAgICAgICBtYXBTZXJ2aWNlIC0+IGZyYW5jaGlzZVNlcnZpY2UgItCa0L7QvtGA0LTQuNC90LDRgtGLINC80LDQs9Cw0LfQuNC90LAg0LTQu9GPINGB0LDQvNC+0LLRi9Cy0L7Qt9CwIiAiSFRUUFMgLyBKU09OIgoKICAgICAgICAgICAgb3JkZXJTZXJ2aWNlIC0+IGJpbGxpbmdTZXJ2aWNlICJPcmRlckNhbmNlbGxlZCB2aWEgUmFiYml0TVEiICJBTVFQIC8gVExTLCBKU09OIHYxIiAiQXN5bmMiCiAgICAgICAgICAgIG9yZGVyU2VydmljZSAtPiBkZWxpdmVyeVNlcnZpY2UgIk9yZGVyQ29uZmlybWVkLCBPcmRlclJlYWR5LCBPcmRlckNhbmNlbGxlZCB2aWEgUmFiYml0TVEiICJBTVFQIC8gVExTLCBKU09OIHYxIiAiQXN5bmMiCiAgICAgICAgICAgIGJpbGxpbmdTZXJ2aWNlIC0+IG9yZGVyU2VydmljZSAiUGF5bWVudFN1Y2NlZWRlZCwgUGF5bWVudEZhaWxlZCwgUmVmdW5kU3RhdHVzQ2hhbmdlZCB2aWEgUmFiYml0TVEiICJBTVFQIC8gVExTLCBKU09OIHYxIiAiQXN5bmMiCiAgICAgICAgICAgIGJpbGxpbmdTZXJ2aWNlIC0+IGRlbGl2ZXJ5U2VydmljZSAiUGF5bWVudFN1Y2NlZWRlZCB2aWEgUmFiYml0TVEiICJBTVFQIC8gVExTLCBKU09OIHYxIiAiQXN5bmMiCiAgICAgICAgICAgIGRlbGl2ZXJ5U2VydmljZSAtPiBvcmRlclNlcnZpY2UgIkRlbGl2ZXJ5QXNzaWduZWQsIERlbGl2ZXJ5QXNzaWdubWVudEZhaWxlZCwgRGVsaXZlcnlQaWNrZWRVcCwgRGVsaXZlcnlEZWxpdmVyZWQsIERlbGl2ZXJ5RmFpbGVkLCBEZWxpdmVyeUNhbmNlbGxlZCB2aWEgUmFiYml0TVEiICJBTVFQIC8gVExTLCBKU09OIHYxIiAiQXN5bmMiCiAgICAgICAgfQoKICAgICAgICBjdXN0b21lciAtPiBzYW5kd2ljaFN0b3JlICLQntGE0L7RgNC80LvRj9C10YIg0Lgg0L/QvtC70YPRh9Cw0LXRgiDQt9Cw0LrQsNC3IgogICAgICAgIG1hbmFnZXIgLT4gc2FuZHdpY2hTdG9yZSAi0KPQv9GA0LDQstC70Y/QtdGCINGB0LLQvtC40LzQuCDQvNCw0LPQsNC30LjQvdCw0LzQuCIKICAgICAgICBuZXR3b3JrQWRtaW4gLT4gc2FuZHdpY2hTdG9yZSAi0KPQv9GA0LDQstC70Y/QtdGCINGB0LXRgtGM0Y4iCiAgICAgICAgZW1wbG95ZWUgLT4gc2FuZHdpY2hTdG9yZSAi0JPQvtGC0L7QstC40YIg0Lgg0LLRi9C00LDRkdGCINC30LDQutCw0LfRiyIKICAgICAgICBjb3VyaWVyIC0+IHNhbmR3aWNoU3RvcmUgItCS0YvQv9C+0LvQvdGP0LXRgiDQtNC+0YHRgtCw0LLQutGDIgogICAgICAgIHNhbmR3aWNoU3RvcmUgLT4gcGF5bWVudFByb3ZpZGVyICLQntC90LvQsNC50L0t0L/Qu9Cw0YLQtdC20Lgg0Lgg0LLQvtC30LLRgNCw0YLRiyIgIkhUVFBTIgogICAgICAgIHBheW1lbnRQcm92aWRlciAtPiBzYW5kd2ljaFN0b3JlICLQn9C+0LTRgtCy0LXRgNC20LTQtdC90LjRjyDQv9C70LDRgtC10LbQtdC5INC4INCy0L7Qt9Cy0YDQsNGC0L7QsiIgIkhUVFBTIGNhbGxiYWNrcyIKICAgICAgICBzYW5kd2ljaFN0b3JlIC0+IG1hcHBpbmdQcm92aWRlckEgItCc0LDRgNGI0YDRg9GC0Ysg0YEg0L/RgNC+0LHQutCw0LzQuCIgIkhUVFBTIgogICAgICAgIHNhbmR3aWNoU3RvcmUgLT4gbWFwcGluZ1Byb3ZpZGVyQiAi0JzQsNGA0YjRgNGD0YLRiyDRgSDQv9GA0L7QsdC60LDQvNC4IC8g0YDQtdC30LXRgNCyIiAiSFRUUFMiCgogICAgICAgIGN1c3RvbWVyIC0+IHdlYkFwcGxpY2F0aW9uICLQktGL0LHQuNGA0LDQtdGCLCDQt9Cw0LrQsNC30YvQstCw0LXRgiDQuCDQvtGC0YHQu9C10LbQuNCy0LDQtdGCIiAiSFRUUFMiCiAgICAgICAgbWFuYWdlciAtPiB3ZWJBcHBsaWNhdGlvbiAi0J3QsNGB0YLRgNCw0LjQstCw0LXRgiDQvNCw0LPQsNC30LjQvSDQuCDQu9C+0LrQsNC70YzQvdGL0LUg0LDQutGG0LjQuCIgIkhUVFBTIgogICAgICAgIG5ldHdvcmtBZG1pbiAtPiB3ZWJBcHBsaWNhdGlvbiAi0KPQv9GA0LDQstC70Y/QtdGCINC60LDRgtCw0LvQvtCz0L7QvCwg0YHQtdGC0YzRjiDQuCDRgNC+0LvRj9C80LgiICJIVFRQUyIKICAgICAgICBlbXBsb3llZSAtPiB3ZWJBcHBsaWNhdGlvbiAi0KPQv9GA0LDQstC70Y/QtdGCINC/0YDQuNCz0L7RgtC+0LLQu9C10L3QuNC10Lwg0Lgg0LLRi9C00LDRh9C10LkiICJIVFRQUyIKICAgICAgICBjb3VyaWVyIC0+IHdlYkFwcGxpY2F0aW9uICLQn9C+0LvRg9GH0LDQtdGCINC4INCy0YvQv9C+0LvQvdGP0LXRgiDQvdCw0LfQvdCw0YfQtdC90LjRjyIgIkhUVFBTIgogICAgICAgIGJpbGxpbmdTZXJ2aWNlIC0+IHBheW1lbnRQcm92aWRlciAi0KHQvtC30LTQsNGR0YIg0L/Qu9Cw0YLRkdC2LCDRgdCy0LXRgNGP0LXRgiwg0L7RgtC80LXQvdGP0LXRgiDQuCDQstC+0LfQstGA0LDRidCw0LXRgiIgIkhUVFBTIC8gUHJvdmlkZXIgQVBJIgogICAgICAgIHBheW1lbnRQcm92aWRlciAtPiBiaWxsaW5nU2VydmljZSAi0J/QvtC00L/QuNGB0LDQvdC90YvQtSBjYWxsYmFja3Mg0L/Qu9Cw0YLQtdC20LXQuSDQuCDQstC+0LfQstGA0LDRgtC+0LIiICJIVFRQUyAvIEpTT04iCiAgICAgICAgbWFwU2VydmljZSAtPiBtYXBwaW5nUHJvdmlkZXJBICLQl9Cw0L/RgNCw0YjQuNCy0LDQtdGCINC80LDRgNGI0YDRg9GCINC4INC00L7RgNC+0LbQvdGD0Y4g0YHQuNGC0YPQsNGG0LjRjiIgIkhUVFBTIC8gUHJvdmlkZXIgQVBJIgogICAgICAgIG1hcFNlcnZpY2UgLT4gbWFwcGluZ1Byb3ZpZGVyQiAi0JfQsNC/0YDQsNGI0LjQstCw0LXRgiDQvNCw0YDRiNGA0YPRgiDQv9GA0Lgg0LLRi9Cx0L7RgNC1INGA0LXQs9C40L7QvdCwIC8g0L7RgtC60LDQt9C1IEEiICJIVFRQUyAvIFByb3ZpZGVyIEFQSSIKICAgIH0KCiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtQ29udGV4dCBzYW5kd2ljaFN0b3JlICJTeXN0ZW1Db250ZXh0IiAi0JrQvtC90YLQtdC60YHRgiDRgdC40YHRgtC10LzRiyIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b0xheW91dCBscgogICAgICAgIH0KICAgICAgICBjb250YWluZXIgc2FuZHdpY2hTdG9yZSAiQ29udGFpbmVycyIgIkM0OiDQstGB0LUg0L/RgNC40LvQvtC20LXQvdC40Y8sINGF0YDQsNC90LjQu9C40YnQsCDQuCDQstC90LXRiNC90LjQtSDRgdC40YHRgtC10LzRiyIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b0xheW91dCBscgogICAgICAgIH0KICAgICAgICBzdHlsZXMgewogICAgICAgICAgICBlbGVtZW50ICJQZXJzb24iIHsKICAgICAgICAgICAgICAgIHNoYXBlIFBlcnNvbgogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMDg0MjdCCiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiU29mdHdhcmUgU3lzdGVtIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMxMTY4QkQKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJDb250YWluZXIiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzQzOERENQogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBDeWxpbmRlcgogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMzE1Qzg1CiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiRXh0ZXJuYWwiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzY2NjY2NgogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIHJlbGF0aW9uc2hpcCAiUmVsYXRpb25zaGlwIiB7CiAgICAgICAgICAgICAgICByb3V0aW5nIE9ydGhvZ29uYWwKICAgICAgICAgICAgICAgIGZvbnRTaXplIDE2CiAgICAgICAgICAgICAgICBkYXNoZWQgZmFsc2UKICAgICAgICAgICAgfQogICAgICAgICAgICByZWxhdGlvbnNoaXAgIkFzeW5jIiB7CiAgICAgICAgICAgICAgICBkYXNoZWQgdHJ1ZQogICAgICAgICAgICAgICAgY29sb3IgI0EzNEEwMAogICAgICAgICAgICB9CiAgICAgICAgICAgIHJlbGF0aW9uc2hpcCAiU2VjdXJpdHkiIHsKICAgICAgICAgICAgICAgIGNvbG9yICM5OTk5OTkKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KfQ=="
   },
   "views" : {
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "Containers",
-      "metadataSymbols" : "SquareBrackets",
       "styles" : {
         "elements" : [ {
           "background" : "#438dd5",
           "color" : "#ffffff",
           "tag" : "Container"
         }, {
+          "background" : "#315c85",
           "shape" : "Cylinder",
           "tag" : "Database"
+        }, {
+          "background" : "#666666",
+          "color" : "#ffffff",
+          "tag" : "External"
         }, {
           "background" : "#08427b",
           "color" : "#ffffff",
@@ -458,255 +620,34 @@
           "background" : "#1168bd",
           "color" : "#ffffff",
           "tag" : "Software System"
+        } ],
+        "relationships" : [ {
+          "color" : "#a34a00",
+          "dashed" : true,
+          "tag" : "Async"
+        }, {
+          "dashed" : false,
+          "fontSize" : 16,
+          "routing" : "Orthogonal",
+          "tag" : "Relationship"
+        }, {
+          "color" : "#999999",
+          "tag" : "Security"
         } ]
       },
       "terminology" : { }
     },
     "containerViews" : [ {
       "automaticLayout" : {
-        "applied" : true,
-        "edgeSeparation" : 0,
-        "implementation" : "Graphviz",
-        "nodeSeparation" : 300,
-        "rankDirection" : "TopBottom",
-        "rankSeparation" : 300,
-        "vertices" : false
-      },
-      "dimensions" : {
-        "height" : 4499,
-        "width" : 5029
-      },
-      "elements" : [ {
-        "id" : "1",
-        "x" : 558,
-        "y" : 160
-      }, {
-        "id" : "2",
-        "x" : 1258,
-        "y" : 160
-      }, {
-        "id" : "3",
-        "x" : 1958,
-        "y" : 160
-      }, {
-        "id" : "4",
-        "x" : 2658,
-        "y" : 160
-      }, {
-        "id" : "5",
-        "x" : 3358,
-        "y" : 160
-      }, {
-        "id" : "7",
-        "x" : 1933,
-        "y" : 860
-      }, {
-        "id" : "8",
-        "x" : 1933,
-        "y" : 2060
-      }, {
-        "id" : "9",
-        "x" : 3741,
-        "y" : 2060
-      }, {
-        "id" : "10",
-        "x" : 2462,
-        "y" : 1460
-      }, {
-        "id" : "11",
-        "x" : 433,
-        "y" : 2660
-      }, {
-        "id" : "12",
-        "x" : 4358,
-        "y" : 2660
-      }, {
-        "id" : "13",
-        "x" : 1183,
-        "y" : 2060
-      }, {
-        "id" : "14",
-        "x" : 2241,
-        "y" : 3260
-      }, {
-        "id" : "15",
-        "x" : 2241,
-        "y" : 2660
-      }, {
-        "id" : "16",
-        "x" : 2991,
-        "y" : 2060
-      }, {
-        "id" : "17",
-        "x" : 3608,
-        "y" : 2660
-      }, {
-        "id" : "18",
-        "x" : 4358,
-        "y" : 3260
-      }, {
-        "id" : "19",
-        "x" : 1183,
-        "y" : 2660
-      }, {
-        "id" : "20",
-        "x" : 2241,
-        "y" : 3860
-      } ],
-      "externalSoftwareSystemBoundariesVisible" : false,
-      "key" : "Containers",
-      "name" : "Container View: sandwich-store",
-      "order" : 2,
-      "relationships" : [ {
-        "id" : "21"
-      }, {
-        "id" : "22",
-        "vertices" : [ {
-          "x" : 1250,
-          "y" : 1460
-        }, {
-          "x" : 283,
-          "y" : 2660
-        }, {
-          "x" : 283,
-          "y" : 2960
-        } ]
-      }, {
-        "id" : "23",
-        "vertices" : [ {
-          "x" : 3312,
-          "y" : 1460
-        }, {
-          "x" : 4466,
-          "y" : 2060
-        } ]
-      }, {
-        "id" : "24"
-      }, {
-        "id" : "25",
-        "vertices" : [ {
-          "x" : 3062,
-          "y" : 1460
-        } ]
-      }, {
-        "id" : "26"
-      }, {
-        "id" : "27",
-        "vertices" : [ {
-          "x" : 1616,
-          "y" : 1460
-        }, {
-          "x" : 1033,
-          "y" : 2060
-        } ]
-      }, {
-        "id" : "28"
-      }, {
-        "id" : "29"
-      }, {
-        "id" : "30"
-      }, {
-        "id" : "31"
-      }, {
-        "id" : "32"
-      }, {
-        "id" : "33"
-      }, {
-        "id" : "34"
-      }, {
-        "id" : "35",
-        "vertices" : [ {
-          "x" : 4341,
-          "y" : 2060
-        } ]
-      }, {
-        "id" : "36",
-        "vertices" : [ {
-          "x" : 2841,
-          "y" : 2660
-        }, {
-          "x" : 2841,
-          "y" : 2960
-        } ]
-      }, {
-        "id" : "37",
-        "vertices" : [ {
-          "x" : 3262,
-          "y" : 2045
-        } ]
-      }, {
-        "id" : "38",
-        "vertices" : [ {
-          "x" : 1983,
-          "y" : 1774
-        } ]
-      }, {
-        "id" : "39"
-      }, {
-        "id" : "40",
-        "vertices" : [ {
-          "x" : 3075,
-          "y" : 2960
-        } ]
-      }, {
-        "id" : "41",
-        "vertices" : [ {
-          "x" : 3390,
-          "y" : 1774
-        } ]
-      }, {
-        "id" : "42",
-        "vertices" : [ {
-          "x" : 2111,
-          "y" : 2045
-        } ]
-      }, {
-        "id" : "43"
-      }, {
-        "id" : "44"
-      }, {
-        "id" : "45",
-        "vertices" : [ {
-          "x" : 1033,
-          "y" : 2960
-        } ]
-      }, {
-        "id" : "46",
-        "vertices" : [ {
-          "x" : 4208,
-          "y" : 2960
-        } ]
-      }, {
-        "id" : "52",
-        "vertices" : [ {
-          "x" : 1108,
-          "y" : 560
-        } ]
-      }, {
-        "id" : "53"
-      }, {
-        "id" : "54"
-      }, {
-        "id" : "55"
-      }, {
-        "id" : "56",
-        "vertices" : [ {
-          "x" : 3208,
-          "y" : 560
-        } ]
-      } ],
-      "softwareSystemId" : "6"
-    } ],
-    "systemContextViews" : [ {
-      "automaticLayout" : {
         "applied" : false,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
-        "rankDirection" : "TopBottom",
+        "rankDirection" : "LeftRight",
         "rankSeparation" : 300,
         "vertices" : false
       },
+      "description" : "C4: все приложения, хранилища и внешние системы",
       "elements" : [ {
         "id" : "1",
         "x" : 0,
@@ -731,12 +672,122 @@
         "id" : "6",
         "x" : 0,
         "y" : 0
+      }, {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "10",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "11",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "13",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "14",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "15",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "16",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "17",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "18",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "20",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "21",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "22",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "23",
+        "x" : 0,
+        "y" : 0
       } ],
-      "enterpriseBoundaryVisible" : true,
-      "key" : "SystemContext",
-      "name" : "System Context View: sandwich-store",
-      "order" : 1,
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "Containers",
+      "name" : "Container View: Sandwich Store",
+      "order" : 2,
       "relationships" : [ {
+        "id" : "24"
+      }, {
+        "id" : "25"
+      }, {
+        "id" : "26"
+      }, {
+        "id" : "27"
+      }, {
+        "id" : "28"
+      }, {
+        "id" : "29"
+      }, {
+        "id" : "30"
+      }, {
+        "id" : "31"
+      }, {
+        "id" : "32"
+      }, {
+        "id" : "33"
+      }, {
+        "id" : "34"
+      }, {
+        "id" : "35"
+      }, {
+        "id" : "36"
+      }, {
+        "id" : "37"
+      }, {
+        "id" : "38"
+      }, {
+        "id" : "39"
+      }, {
+        "id" : "40"
+      }, {
+        "id" : "41"
+      }, {
+        "id" : "42"
+      }, {
+        "id" : "43"
+      }, {
+        "id" : "44"
+      }, {
+        "id" : "45"
+      }, {
+        "id" : "46"
+      }, {
         "id" : "47"
       }, {
         "id" : "48"
@@ -746,8 +797,109 @@
         "id" : "50"
       }, {
         "id" : "51"
+      }, {
+        "id" : "52"
+      }, {
+        "id" : "53"
+      }, {
+        "id" : "54"
+      }, {
+        "id" : "55"
+      }, {
+        "id" : "56"
+      }, {
+        "id" : "66"
+      }, {
+        "id" : "67"
+      }, {
+        "id" : "68"
+      }, {
+        "id" : "69"
+      }, {
+        "id" : "70"
+      }, {
+        "id" : "71"
+      }, {
+        "id" : "72"
+      }, {
+        "id" : "73"
+      }, {
+        "id" : "74"
       } ],
-      "softwareSystemId" : "6"
+      "softwareSystemId" : "9"
+    } ],
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "description" : "Контекст системы",
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "9",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "SystemContext",
+      "name" : "System Context View: Sandwich Store",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "57"
+      }, {
+        "id" : "58"
+      }, {
+        "id" : "59"
+      }, {
+        "id" : "60"
+      }, {
+        "id" : "61"
+      }, {
+        "id" : "62"
+      }, {
+        "id" : "63"
+      }, {
+        "id" : "64"
+      }, {
+        "id" : "65"
+      } ],
+      "softwareSystemId" : "9"
     } ]
   }
 }
