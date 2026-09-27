@@ -1,0 +1,84 @@
+digraph {
+  compound=true
+  graph [fontname="Arial", rankdir=LR, ranksep=1.0, nodesep=1.0]
+  node [fontname="Arial", shape=box, margin="0.4,0.3"]
+  edge [fontname="Arial"]
+  label=<<br /><font point-size="34">Container View: Sandwich Store</font><br /><font point-size="24">C4: все приложения, хранилища и внешние системы</font>>
+
+  1 [id=1,shape=rect, label=<<font point-size="34">Покупатель</font><br /><font point-size="19">[Person]</font><br /><br /><font point-size="24">Выбирает магазин, оформляет,<br />оплачивает и получает заказ</font>>, style=filled, color="#052e56", fillcolor="#08427b", fontcolor="#ffffff"]
+  2 [id=2,shape=rect, label=<<font point-size="34">Управляющий</font><br /><font point-size="19">[Person]</font><br /><br /><font point-size="24">Управляет своими магазинами и<br />локальными акциями</font>>, style=filled, color="#052e56", fillcolor="#08427b", fontcolor="#ffffff"]
+  3 [id=3,shape=rect, label=<<font point-size="34">Администратор сети</font><br /><font point-size="19">[Person]</font><br /><br /><font point-size="24">Управляет каталогом,<br />франшизами, доступом и<br />национальными акциями</font>>, style=filled, color="#052e56", fillcolor="#08427b", fontcolor="#ffffff"]
+  4 [id=4,shape=rect, label=<<font point-size="34">Сотрудник магазина</font><br /><font point-size="19">[Person]</font><br /><br /><font point-size="24">Готовит и выдаёт заказы,<br />учитывает наличные</font>>, style=filled, color="#052e56", fillcolor="#08427b", fontcolor="#ffffff"]
+  5 [id=5,shape=rect, label=<<font point-size="34">Курьер</font><br /><font point-size="19">[Person]</font><br /><br /><font point-size="24">Доставляет назначенные заказы,<br />учитывает оплату при получении</font>>, style=filled, color="#052e56", fillcolor="#08427b", fontcolor="#ffffff"]
+  6 [id=6,shape=rect, label=<<font point-size="34">Payment Provider</font><br /><font point-size="19">[Software System]</font><br /><br /><font point-size="24">Внешняя система онлайн-оплаты<br />и возвратов</font>>, style=filled, color="#474747", fillcolor="#666666", fontcolor="#ffffff"]
+  7 [id=7,shape=rect, label=<<font point-size="34">Mapping Provider A</font><br /><font point-size="19">[Software System]</font><br /><br /><font point-size="24">Внешняя система маршрутов и<br />дорожной ситуации</font>>, style=filled, color="#474747", fillcolor="#666666", fontcolor="#ffffff"]
+  8 [id=8,shape=rect, label=<<font point-size="34">Mapping Provider B</font><br /><font point-size="19">[Software System]</font><br /><br /><font point-size="24">Альтернативная внешняя система<br />маршрутов и пробок</font>>, style=filled, color="#474747", fillcolor="#666666", fontcolor="#ffffff"]
+
+  subgraph cluster_9 {
+    margin=25
+    label=<<font point-size="24"><br />Sandwich Store</font><br /><font point-size="19">[Software System]</font>>
+    labelloc=b
+    color="#444444"
+    fontcolor="#444444"
+    fillcolor="#444444"
+
+    10 [id=10,shape=rect, label=<<font point-size="34">Web Application</font><br /><font point-size="19">[Container: Server-side Web, HTML/CSS/JavaScript]</font><br /><br /><font point-size="24">Адаптивный UI и BFF для всех<br />ролей; защищённая сессия</font>>, style=filled, color="#2e6295", fillcolor="#438dd5", fontcolor="#ffffff"]
+    11 [id=11,shape=rect, label=<<font point-size="34">Identity Service</font><br /><font point-size="19">[Container: OIDC/OAuth 2.0, JWT]</font><br /><br /><font point-size="24">Учётные записи, вход, роли и<br />доступ к магазинам</font>>, style=filled, color="#2e6295", fillcolor="#438dd5", fontcolor="#ffffff"]
+    12 [id=12,shape=rect, label=<<font point-size="34">Product Service</font><br /><font point-size="19">[Container: Java / Spring Boot]</font><br /><br /><font point-size="24">Каталог, меню магазина,<br />базовые цены, доступность и<br />расчёт товаров</font>>, style=filled, color="#2e6295", fillcolor="#438dd5", fontcolor="#ffffff"]
+    13 [id=13,shape=rect, label=<<font point-size="34">Franchise Service</font><br /><font point-size="19">[Container: Java / Spring Boot]</font><br /><br /><font point-size="24">Магазины, расписания,<br />настройки, национальные и<br />локальные акции</font>>, style=filled, color="#2e6295", fillcolor="#438dd5", fontcolor="#ffffff"]
+    14 [id=14,shape=rect, label=<<font point-size="34">Order Service</font><br /><font point-size="19">[Container: Java / Spring Boot]</font><br /><br /><font point-size="24">Корзина, оформление, очередь<br />кухни, готовность и состояние<br />заказа</font>>, style=filled, color="#2e6295", fillcolor="#438dd5", fontcolor="#ffffff"]
+    15 [id=15,shape=rect, label=<<font point-size="34">Billing Service</font><br /><font point-size="19">[Container: Java / Spring Boot]</font><br /><br /><font point-size="24">Онлайн-платежи, учёт наличных,<br />попытки и полные возвраты</font>>, style=filled, color="#2e6295", fillcolor="#438dd5", fontcolor="#ffffff"]
+    16 [id=16,shape=rect, label=<<font point-size="34">Delivery Service</font><br /><font point-size="19">[Container: Java / Spring Boot]</font><br /><br /><font point-size="24">Зона и тариф доставки,<br />назначение курьера, забор и<br />вручение</font>>, style=filled, color="#2e6295", fillcolor="#438dd5", fontcolor="#ffffff"]
+    17 [id=17,shape=rect, label=<<font point-size="34">Map Service</font><br /><font point-size="19">[Container: Java / Spring Boot]</font><br /><br /><font point-size="24">Маршруты с пробками; выбор и<br />переключение внешних<br />провайдеров</font>>, style=filled, color="#2e6295", fillcolor="#438dd5", fontcolor="#ffffff"]
+    18 [id=18,shape=cylinder, label=<<font point-size="34">Identity Database</font><br /><font point-size="19">[Container: PostgreSQL]</font><br /><br /><font point-size="24">Аккаунты, сессии, роли и<br />назначения магазинов</font>>, style=filled, color="#22405d", fillcolor="#315c85", fontcolor="#ffffff"]
+    19 [id=19,shape=cylinder, label=<<font point-size="34">Product Database</font><br /><font point-size="19">[Container: PostgreSQL]</font><br /><br /><font point-size="24">Каталог, меню, цены,<br />доступность, расчёты</font>>, style=filled, color="#22405d", fillcolor="#315c85", fontcolor="#ffffff"]
+    20 [id=20,shape=cylinder, label=<<font point-size="34">Franchise Database</font><br /><font point-size="19">[Container: PostgreSQL]</font><br /><br /><font point-size="24">Магазины, владельцы,<br />настройки, акции</font>>, style=filled, color="#22405d", fillcolor="#315c85", fontcolor="#ffffff"]
+    21 [id=21,shape=cylinder, label=<<font point-size="34">Order Database</font><br /><font point-size="19">[Container: PostgreSQL]</font><br /><br /><font point-size="24">Корзины, предложения, заказы,<br />снимки, очередь кухни,<br />outbox/inbox</font>>, style=filled, color="#22405d", fillcolor="#315c85", fontcolor="#ffffff"]
+    22 [id=22,shape=cylinder, label=<<font point-size="34">Billing Database</font><br /><font point-size="19">[Container: PostgreSQL]</font><br /><br /><font point-size="24">Платежи, попытки, наличные,<br />возвраты, outbox/inbox</font>>, style=filled, color="#22405d", fillcolor="#315c85", fontcolor="#ffffff"]
+    23 [id=23,shape=cylinder, label=<<font point-size="34">Delivery Database</font><br /><font point-size="19">[Container: PostgreSQL]</font><br /><br /><font point-size="24">Доставки, курьеры, назначения,<br />расчёты, outbox/inbox</font>>, style=filled, color="#22405d", fillcolor="#315c85", fontcolor="#ffffff"]
+  }
+
+  10 -> 11 [id=24, label=<<font point-size="16">Регистрация, вход, роли, JWKS</font><br /><font point-size="11">[HTTPS / OIDC, JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  10 -> 12 [id=25, label=<<font point-size="16">Меню и управление ассортиментом</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  10 -> 13 [id=26, label=<<font point-size="16">Магазины, настройки и акции</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  10 -> 14 [id=27, label=<<font point-size="16">Корзина, оформление и работа кухни</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  10 -> 15 [id=28, label=<<font point-size="16">Статус платежа, учёт наличных и их<br />возврата в магазине</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  10 -> 16 [id=29, label=<<font point-size="16">Курьер, доставка, маршрут и наличные при<br />вручении</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  10 -> 17 [id=30, label=<<font point-size="16">Маршрут покупателя до магазина</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  12 -> 11 [id=31, label=<<font point-size="16">Обновляет кеш публичных ключей JWT</font><br /><font point-size="11">[HTTPS / JWKS]</font>>, style="solid", color="#999999", fontcolor="#999999"]
+  13 -> 11 [id=32, label=<<font point-size="16">Обновляет кеш публичных ключей JWT</font><br /><font point-size="11">[HTTPS / JWKS]</font>>, style="solid", color="#999999", fontcolor="#999999"]
+  14 -> 11 [id=33, label=<<font point-size="16">Обновляет кеш публичных ключей JWT</font><br /><font point-size="11">[HTTPS / JWKS]</font>>, style="solid", color="#999999", fontcolor="#999999"]
+  15 -> 11 [id=34, label=<<font point-size="16">Обновляет кеш публичных ключей JWT</font><br /><font point-size="11">[HTTPS / JWKS]</font>>, style="solid", color="#999999", fontcolor="#999999"]
+  16 -> 11 [id=35, label=<<font point-size="16">Обновляет кеш публичных ключей JWT</font><br /><font point-size="11">[HTTPS / JWKS]</font>>, style="solid", color="#999999", fontcolor="#999999"]
+  17 -> 11 [id=36, label=<<font point-size="16">Обновляет кеш публичных ключей JWT</font><br /><font point-size="11">[HTTPS / JWKS]</font>>, style="solid", color="#999999", fontcolor="#999999"]
+  11 -> 18 [id=37, label=<<font point-size="16">Читает и записывает</font><br /><font point-size="11">[SQL / TLS]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  12 -> 19 [id=38, label=<<font point-size="16">Читает и записывает</font><br /><font point-size="11">[SQL / TLS]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  13 -> 20 [id=39, label=<<font point-size="16">Читает и записывает</font><br /><font point-size="11">[SQL / TLS]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  14 -> 21 [id=40, label=<<font point-size="16">Читает и записывает</font><br /><font point-size="11">[SQL / TLS]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  15 -> 22 [id=41, label=<<font point-size="16">Читает и записывает</font><br /><font point-size="11">[SQL / TLS]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  16 -> 23 [id=42, label=<<font point-size="16">Читает и записывает</font><br /><font point-size="11">[SQL / TLS]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  14 -> 12 [id=43, label=<<font point-size="16">Стоимость товаров и проверка доступности</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  14 -> 13 [id=44, label=<<font point-size="16">Приём заказов, способы оплаты, параметры<br />кухни</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  14 -> 15 [id=45, label=<<font point-size="16">Создание, сверка платежа и повтор оплаты</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  14 -> 16 [id=46, label=<<font point-size="16">Тариф и проверка зоны доставки</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  12 -> 13 [id=47, label=<<font point-size="16">Магазин, валюта и применение акции</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  16 -> 13 [id=48, label=<<font point-size="16">Адрес магазина, зона и тариф</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  16 -> 17 [id=49, label=<<font point-size="16">Маршрут курьера</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  16 -> 15 [id=50, label=<<font point-size="16">Фиксирует наличные от назначенного<br />курьера</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  17 -> 13 [id=51, label=<<font point-size="16">Координаты магазина для самовывоза</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  14 -> 15 [id=52, label=<<font point-size="16">OrderCancelled via RabbitMQ</font><br /><font point-size="11">[AMQP / TLS, JSON v1]</font>>, style="dashed", color="#a34a00", fontcolor="#a34a00"]
+  14 -> 16 [id=53, label=<<font point-size="16">OrderConfirmed, OrderReady,<br />OrderCancelled via RabbitMQ</font><br /><font point-size="11">[AMQP / TLS, JSON v1]</font>>, style="dashed", color="#a34a00", fontcolor="#a34a00"]
+  15 -> 14 [id=54, label=<<font point-size="16">PaymentSucceeded, PaymentFailed,<br />RefundStatusChanged via RabbitMQ</font><br /><font point-size="11">[AMQP / TLS, JSON v1]</font>>, style="dashed", color="#a34a00", fontcolor="#a34a00"]
+  15 -> 16 [id=55, label=<<font point-size="16">PaymentSucceeded via RabbitMQ</font><br /><font point-size="11">[AMQP / TLS, JSON v1]</font>>, style="dashed", color="#a34a00", fontcolor="#a34a00"]
+  16 -> 14 [id=56, label=<<font point-size="16">DeliveryAssigned,<br />DeliveryAssignmentFailed,<br />DeliveryPickedUp, DeliveryDelivered,<br />DeliveryFailed, DeliveryCancelled via<br />RabbitMQ</font><br /><font point-size="11">[AMQP / TLS, JSON v1]</font>>, style="dashed", color="#a34a00", fontcolor="#a34a00"]
+  1 -> 10 [id=66, label=<<font point-size="16">Выбирает, заказывает и отслеживает</font><br /><font point-size="11">[HTTPS]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  2 -> 10 [id=67, label=<<font point-size="16">Настраивает магазин и локальные акции</font><br /><font point-size="11">[HTTPS]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  3 -> 10 [id=68, label=<<font point-size="16">Управляет каталогом, сетью и ролями</font><br /><font point-size="11">[HTTPS]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  4 -> 10 [id=69, label=<<font point-size="16">Управляет приготовлением и выдачей</font><br /><font point-size="11">[HTTPS]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  5 -> 10 [id=70, label=<<font point-size="16">Получает и выполняет назначения</font><br /><font point-size="11">[HTTPS]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  15 -> 6 [id=71, label=<<font point-size="16">Создаёт платёж, сверяет, отменяет и<br />возвращает</font><br /><font point-size="11">[HTTPS / Provider API]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  6 -> 15 [id=72, label=<<font point-size="16">Подписанные callbacks платежей и<br />возвратов</font><br /><font point-size="11">[HTTPS / JSON]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  17 -> 7 [id=73, label=<<font point-size="16">Запрашивает маршрут и дорожную ситуацию</font><br /><font point-size="11">[HTTPS / Provider API]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  17 -> 8 [id=74, label=<<font point-size="16">Запрашивает маршрут при выборе региона /<br />отказе A</font><br /><font point-size="11">[HTTPS / Provider API]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+
+}

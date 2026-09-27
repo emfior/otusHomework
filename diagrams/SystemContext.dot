@@ -1,0 +1,28 @@
+digraph {
+  compound=true
+  graph [fontname="Arial", rankdir=LR, ranksep=1.0, nodesep=1.0]
+  node [fontname="Arial", shape=box, margin="0.4,0.3"]
+  edge [fontname="Arial"]
+  label=<<br /><font point-size="34">System Context View: Sandwich Store</font><br /><font point-size="24">Контекст системы</font>>
+
+  1 [id=1,shape=rect, label=<<font point-size="34">Покупатель</font><br /><font point-size="19">[Person]</font><br /><br /><font point-size="24">Выбирает магазин, оформляет,<br />оплачивает и получает заказ</font>>, style=filled, color="#052e56", fillcolor="#08427b", fontcolor="#ffffff"]
+  2 [id=2,shape=rect, label=<<font point-size="34">Управляющий</font><br /><font point-size="19">[Person]</font><br /><br /><font point-size="24">Управляет своими магазинами и<br />локальными акциями</font>>, style=filled, color="#052e56", fillcolor="#08427b", fontcolor="#ffffff"]
+  3 [id=3,shape=rect, label=<<font point-size="34">Администратор сети</font><br /><font point-size="19">[Person]</font><br /><br /><font point-size="24">Управляет каталогом,<br />франшизами, доступом и<br />национальными акциями</font>>, style=filled, color="#052e56", fillcolor="#08427b", fontcolor="#ffffff"]
+  4 [id=4,shape=rect, label=<<font point-size="34">Сотрудник магазина</font><br /><font point-size="19">[Person]</font><br /><br /><font point-size="24">Готовит и выдаёт заказы,<br />учитывает наличные</font>>, style=filled, color="#052e56", fillcolor="#08427b", fontcolor="#ffffff"]
+  5 [id=5,shape=rect, label=<<font point-size="34">Курьер</font><br /><font point-size="19">[Person]</font><br /><br /><font point-size="24">Доставляет назначенные заказы,<br />учитывает оплату при получении</font>>, style=filled, color="#052e56", fillcolor="#08427b", fontcolor="#ffffff"]
+  6 [id=6,shape=rect, label=<<font point-size="34">Payment Provider</font><br /><font point-size="19">[Software System]</font><br /><br /><font point-size="24">Внешняя система онлайн-оплаты<br />и возвратов</font>>, style=filled, color="#474747", fillcolor="#666666", fontcolor="#ffffff"]
+  7 [id=7,shape=rect, label=<<font point-size="34">Mapping Provider A</font><br /><font point-size="19">[Software System]</font><br /><br /><font point-size="24">Внешняя система маршрутов и<br />дорожной ситуации</font>>, style=filled, color="#474747", fillcolor="#666666", fontcolor="#ffffff"]
+  8 [id=8,shape=rect, label=<<font point-size="34">Mapping Provider B</font><br /><font point-size="19">[Software System]</font><br /><br /><font point-size="24">Альтернативная внешняя система<br />маршрутов и пробок</font>>, style=filled, color="#474747", fillcolor="#666666", fontcolor="#ffffff"]
+  9 [id=9,shape=rect, label=<<font point-size="34">Sandwich Store</font><br /><font point-size="19">[Software System]</font><br /><br /><font point-size="24">Онлайн-заказы сети сэндвичных<br />с независимыми франшизами</font>>, style=filled, color="#0b4884", fillcolor="#1168bd", fontcolor="#ffffff"]
+
+  1 -> 9 [id=57, label=<<font point-size="16">Оформляет и получает заказ</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  2 -> 9 [id=58, label=<<font point-size="16">Управляет своими магазинами</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  3 -> 9 [id=59, label=<<font point-size="16">Управляет сетью</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  4 -> 9 [id=60, label=<<font point-size="16">Готовит и выдаёт заказы</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  5 -> 9 [id=61, label=<<font point-size="16">Выполняет доставку</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  9 -> 6 [id=62, label=<<font point-size="16">Онлайн-платежи и возвраты</font><br /><font point-size="11">[HTTPS]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  6 -> 9 [id=63, label=<<font point-size="16">Подтверждения платежей и возвратов</font><br /><font point-size="11">[HTTPS callbacks]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  9 -> 7 [id=64, label=<<font point-size="16">Маршруты с пробками</font><br /><font point-size="11">[HTTPS]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+  9 -> 8 [id=65, label=<<font point-size="16">Маршруты с пробками / резерв</font><br /><font point-size="11">[HTTPS]</font>>, style="solid", color="#444444", fontcolor="#444444"]
+
+}
