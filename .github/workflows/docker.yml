@@ -1,0 +1,19 @@
+name: Build homework image
+
+on:
+  push:
+    branches:
+      - 'HW*'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Download source code
+        uses: actions/checkout@v7
+
+      - name: Build AMD64 image
+        run: docker buildx build --platform linux/amd64 --load -t otus-health-checker:ci .
