@@ -1,0 +1,40 @@
+{
+  "info": {
+    "_postman_id": "458e3e9a-e696-4850-bdf6-e1a863eb27ad",
+    "name": "Check health",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "15164050"
+  },
+  "item": [
+    {
+      "name": "health",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", function () {\n  pm.response.to.have.status(200);\n});\n\npm.test(\"Health response is OK\", function () {\n  pm.expect(pm.response.json()).to.deep.equal({ status: \"OK\" });\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://arch.homework/health",
+          "protocol": "http",
+          "host": [
+            "arch",
+            "homework"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
